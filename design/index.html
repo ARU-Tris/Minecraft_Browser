@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>MINECRAFT? — Browser concept</title>
+  <link rel="icon" href="../assets/craftside-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="concept.css">
+  <link rel="stylesheet" href="inventory.css">
+  <link rel="stylesheet" href="resource-ui.css">
+  <link rel="stylesheet" href="ambience.css">
+  <link rel="stylesheet" href="unread.css">
+  <link rel="stylesheet" href="resource-pack.css">
+  <link rel="stylesheet" href="native.css">
+  <script src="locales.js" defer></script>
+  <script src="i18n.js" defer></script>
+  <script src="appearance-model.js" defer></script>
+  <script src="appearance.js" defer></script>
+  <script src="../assets/minecraft/catalog.js" defer></script>
+  <script src="ambience-model.js" defer></script>
+  <script src="unread-model.js" defer></script>
+  <script src="inventory-model.js" defer></script>
+  <script src="player-pose.js" defer></script>
+  <script src="player.js" defer></script>
+  <script src="bookmarks.js" defer></script>
+  <script src="workspace.js" defer></script>
+  <script src="native-workspace.js" defer></script>
+  <script src="migration.js" defer></script>
+  <script src="unread.js" defer></script>
+  <script src="../assets/ambience/manifest.js" defer></script>
+  <script src="ambience.js" defer></script>
+  <script src="resource-pack-model.js" defer></script>
+  <script src="resource-pack-db.js" defer></script>
+  <script src="resource-pack-renderer.js" defer></script>
+  <script src="resource-packs.js" defer></script>
+</head>
+<body>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="i-panel" viewBox="0 0 24 24"><path d="M3 4h18v16H3zM9 4v16M5 8h2m-2 4h2m-2 4h2"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="m11 5-7 7 7 7M4 12h16"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="m13 5 7 7-7 7M4 12h16"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M19 9a8 8 0 1 0 0 7M19 3v6h-6"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M7 3h10l-2 7 4 4H5l4-4-2-7Zm5 11v7"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><path d="M4 3h10v3h3v10H7v-3H4V3Zm12 12 5 6"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><path d="M7 10V5h10v5M5 10h14v11H5zM12 14v3"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M4 4h16v9l-3 5-5 4-5-4-3-5V4Zm4 8 3 3 5-6"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 3 6h6l-5 5 2 7-6-4-6 4 2-7-5-5h6z"/></symbol>
+      <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 5h7l3 3h8v12H3z"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-6-6 6 6 6-6M4 16v5h16v-5"/></symbol>
+      <symbol id="i-gear" viewBox="0 0 24 24"><path d="M9 3h6v3h3v3h3v6h-3v3h-3v3H9v-3H6v-3H3V9h3V6h3zM9 9h6v6H9z"/></symbol>
+      <symbol id="i-note" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 4h7l2 2 2-2h7v16h-7l-2 2-2-2H3zM12 6v16"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><path d="M8 8h8v8H8zM12 1v4m0 14v4M1 12h4m14 0h4M4 4l3 3m10 10 3 3M4 20l3-3M17 7l3-3"/></symbol>
+      <symbol id="i-photo" viewBox="0 0 24 24"><path d="M3 4h18v16H3zM3 17l6-6 5 5 3-3 4 4M15 8h2v2h-2z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><path d="M7 3h10v3h4v12h-4v3H7v-3H3V6h4zM3 12h18M9 3v18m6-18v18"/></symbol>
+      <symbol id="i-split" viewBox="0 0 24 24"><path d="M2 4h8v16H2zM14 4h8v16h-8z"/></symbol>
+      <symbol id="item-pick" viewBox="0 0 24 24"><path fill="#30302b" d="M4 2h14v2h3v8h-4V8h-3v3h-3v3H8v3H5v3H2v-5h3v-3h3V9h3V6H4z"/><path fill="#5fdfcc" d="M5 3h12v2h3v6h-2V7h-5V5H5z"/><path fill="#a47b47" d="M11 9h3v3h-3zm-3 3h3v3H8zm-3 3h3v3H5z"/></symbol>
+      <symbol id="item-book" viewBox="0 0 24 24"><path fill="#442922" d="M3 4h15v2h3v14H6v-2H3z"/><path fill="#9a4537" d="M4 4h13v13H4z"/><path fill="#c2704c" d="M6 5h9v2H6zM5 8h2v7H5z"/><path fill="#dcd4b3" d="M7 18h12v-3h-2v2H7z"/><path fill="#e0b755" d="M12 8h3v6h-3z"/></symbol>
+      <symbol id="item-compass" viewBox="0 0 24 24"><path fill="#26272a" d="M7 2h10v3h4v14h-4v3H7v-3H3V5h4z"/><path fill="#bcbfc1" d="M8 4h8v3h3v10h-3v3H8v-3H5V7h3z"/><path fill="#45474b" d="M8 7h8v10H8z"/><path fill="#d85442" d="M13 5h3v7h-3v3h-3v-5h3z"/><path fill="#e1dac1" d="M9 14h3v5H9z"/></symbol>
+      <symbol id="item-chest" viewBox="0 0 24 24"><path fill="#38291a" d="M2 5h20v16H2z"/><path fill="#b4803e" d="M4 7h16v12H4z"/><path fill="#d9a356" d="M5 7h14v3H5z"/><path fill="#694a29" d="M4 11h16v3H4zM5 16h2v3H5zm12 0h2v3h-2z"/><path fill="#c9c9b6" d="M10 10h4v6h-4z"/></symbol>
+      <symbol id="item-shield" viewBox="0 0 24 24"><path fill="#383735" d="M3 2h18v13h-3v4h-3v3H9v-3H6v-4H3z"/><path fill="#b9c3a4" d="M5 4h14v10h-3v4h-3v2h-2v-2H8v-4H5z"/><path fill="#5b8352" d="M8 6h8v6h-3v5h-2v-5H8z"/></symbol>
+      <symbol id="item-map" viewBox="0 0 24 24"><path fill="#69573b" d="M2 4h6V2h8v2h6v17h-6v2H8v-2H2z"/><path fill="#d9d3a1" d="M4 6h5V4h6v2h5v13h-5v2H9v-2H4z"/><path fill="#7a9d61" d="M6 8h5v4H8v4H6zm8 5h4v4h-4z"/><path fill="#73afb3" d="M12 6h2v12h-2z"/></symbol>
+      <symbol id="item-head" viewBox="0 0 24 24"><path fill="currentColor" d="M5 4h14v14h-4v-5H9v5H5zM3 8h2v12H3zm16 0h2v12h-2z"/></symbol>
+      <symbol id="item-shirt" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h5v4h8V3h5v9h-4v10H7V12H3z"/></symbol>
+      <symbol id="item-pants" viewBox="0 0 24 24"><path fill="currentColor" d="M5 3h14v18h-5V10h-4v11H5z"/></symbol>
+      <symbol id="item-boots" viewBox="0 0 24 24"><path fill="currentColor" d="M5 3h5v18H2v-7h3zm9 0h5v11h3v7h-8z"/></symbol>
+    </defs>
+  </svg>
+
+  <main class="review">
+    <header class="review-heading">
+      <div><p class="eyebrow">A BROWSER, BUILT AROUND YOUR SPACE</p><h1>MINECRAFT?<span>마인크래프트 스타일 브라우저 구상</span></h1></div>
+      <span class="concept-stamp">CONCEPT <b>06</b></span>
+    </header>
+
+    <section class="review-controls" aria-label="시안 비교 도구">
+      <div class="segmented" role="group" aria-label="사이드바 상태">
+        <button data-layout="pinned" aria-pressed="true">고정해서 열기</button>
+        <button data-layout="peek" aria-pressed="false">잠깐 열기</button>
+        <button data-layout="closed" aria-pressed="false">접고 집중하기</button>
+      </div>
+      <div class="review-options">
+        <label>화면 <select id="scene-select"><option value="home">새 탭</option><option value="notes">웹에서 작업</option><option value="reading">글 읽기 · 광고 자리</option></select></label>
+        <label>재질 <select id="theme-select"><option value="stone">스톤</option><option value="deepslate">심층암</option></select></label>
+        <label>World <select id="world-preview"><option value="auto">Computer time</option><option value="cave">Cave · 00–06</option><option value="day">Day · 06–18</option><option value="sunset">Sunset · 18–20</option><option value="night">Night · 20–00</option></select></label>
+        <button class="review-dual" id="preview-dual"><svg><use href="#i-split"/></svg>듀얼 뷰 보기</button>
+      </div>
+    </section>
+
+    <section id="browser-shell" class="browser-shell" data-layout="pinned" data-theme="stone" aria-label="MINECRAFT? 브라우저 화면 시안">
+      <div class="sidebar-scrim" id="sidebar-scrim"></div>
+      <aside class="sidebar" id="sidebar" aria-label="브라우저 사이드바">
+        <header class="sidebar-brand"><img src="../assets/craftside-mark.svg" alt="" width="30" height="30"><span class="wordmark">MINECRAFT?</span><button class="icon-btn quiet" id="collapse-sidebar" aria-label="사이드바 접기" title="사이드바 접기 · Ctrl+B"><svg><use href="#i-panel"/></svg></button></header>
+        <button class="sidebar-workspace player-profile" data-action="settings" title="설정"><canvas data-player-face width="16" height="16" aria-hidden="true"></canvas> ARU_Tris <span class="workspace-key">나의 작업 공간</span></button>
+        <div class="sidebar-navigation">
+          <button class="icon-btn" id="back-button" aria-label="이전 화면" title="이전 화면"><svg><use href="#i-left"/></svg></button>
+          <button class="icon-btn" id="forward-button" aria-label="다음 화면" title="다음 화면"><svg><use href="#i-right"/></svg></button>
+          <button class="icon-btn" id="reload-button" aria-label="화면 새로고침" title="미리보기 화면 새로고침"><svg><use href="#i-refresh"/></svg></button>
+          <button class="icon-btn" id="open-address" aria-label="주소 입력" title="주소 입력 · Ctrl+L"><svg><use href="#i-search"/></svg></button>
+          <button class="icon-btn" id="pin-sidebar" aria-label="사이드바 고정 해제" aria-pressed="true" title="사이드바 고정"><svg><use href="#i-pin"/></svg></button>
+        </div>
+        <button class="address-slot" id="address-slot" title="주소 입력 · Ctrl+L"><svg><use href="#i-globe"/></svg><span id="current-address">craftside://newtab</span><kbd>L</kbd></button>
+        <div class="section-caption"><span>열어 둔 탭</span><span id="tab-count">3</span></div>
+        <div id="tab-list" class="tab-list" aria-label="탭 목록"></div>
+        <button class="new-tab" id="new-tab"><svg><use href="#i-plus"/></svg><span>새 탭</span><kbd>Ctrl T</kbd></button>
+        <button class="split-toggle" id="split-toggle" aria-pressed="false"><svg><use href="#i-split"/></svg><span>듀얼 뷰</span><small id="pane-status">하나의 화면</small></button>
+        <div class="sidebar-rule"></div>
+        <div class="section-caption"><span>보관함</span></div>
+        <button class="storage-row" data-panel="bookmarks"><svg><use href="#i-star"/></svg>즐겨찾기<span class="tiny-arrow">›</span></button>
+        <button type="button" class="storage-row" id="passwords-button" hidden><svg><use href="#i-lock"/></svg>Saved passwords</button><button type="button" class="storage-row" id="chrome-bookmarks-button" hidden><svg><use href="#i-book"/></svg>Chrome bookmarks</button><button class="storage-row" data-panel="downloads"><svg><use href="#i-download"/></svg>다운로드<span class="tiny-arrow">›</span></button>
+        <div class="sidebar-bottom">
+          <section class="music-player" aria-label="Background music">
+            <div class="music-world"><span id="world-period">Daylight</span><time id="world-clock"></time></div>
+            <div class="music-track"><img src="../assets/minecraft/renders/jukebox.png" alt="" draggable="false"><div><strong id="music-title" data-i18n-skip>Minecraft</strong><small id="music-status" role="status">Click anywhere to start</small></div></div>
+            <div class="music-controls"><button type="button" id="music-previous" title="Previous track" aria-label="Previous track"><svg><use href="#i-left"/></svg></button><button type="button" id="music-toggle" title="Play music" aria-label="Play music" aria-pressed="false"><span aria-hidden="true">▶</span></button><button type="button" id="music-next" title="Next track" aria-label="Next track"><svg><use href="#i-right"/></svg></button><input id="music-volume" type="range" min="0" max="100" value="22" aria-label="Music volume"></div>
+          </section>
+          <button class="shield-card" id="shield-button" aria-expanded="false" aria-controls="shield-popover"><span class="shield-icon"><svg><use href="#i-shield"/></svg></span><span>광고 차단<small id="shield-summary">광고 자리 접기</small></span><span class="on-light">ON</span></button>
+          <div class="sidebar-footer"><button id="settings-button" title="화면 설정"><svg><use href="#i-gear"/></svg>설정</button><span>나만의 작은 월드</span></div>
+        </div>
+      </aside>
+
+      <button id="edge-handle" class="edge-handle" aria-label="사이드바 잠깐 열기" aria-expanded="false" title="사이드바 열기 · Ctrl+B"><span></span><span></span><span></span></button>
+
+      <div class="web-viewport" id="web-viewport" data-split="false" data-focus="left">
+        <section class="site home-site" id="site-home" aria-label="새 탭">
+          <div class="world-backdrop" aria-hidden="true"><img class="world-layer" alt="" draggable="false"><img class="world-layer" alt="" draggable="false"></div>
+          <div class="inventory-backdrop"></div>
+          <header class="inventory-brand"><span>MINECRAFT?</span><small>내 월드는 내 스타일!</small></header>
+          <form class="inventory-search" data-role="home-search"><svg><use href="#i-search"/></svg><input data-role="home-query" aria-label="검색어 또는 주소" placeholder="검색어 또는 주소 입력" autocomplete="off"><button type="submit" aria-label="주소 입력"><svg><use href="#i-arrow"/></svg></button></form>
+          <div class="inventory-window inventory-native">
+            <div class="equipment-slots" data-role="equipment-slots" aria-label="착용 중인 갑옷"></div>
+            <div class="player-well"><canvas class="player-canvas" data-player-canvas width="280" height="380" aria-label="ARU_Tris 플레이어. 끌어서 회전할 수 있습니다." role="img"></canvas></div>
+            <h3 class="native-crafting-label">제작</h3>
+            <div class="crafting-grid"><button class="inventory-slot" data-action="address" title="주소 입력"><img src="../assets/minecraft/textures/item/compass_16.png" alt="주소 입력" draggable="false"></button><button class="inventory-slot" data-panel="bookmarks" title="즐겨찾기"><img src="../assets/minecraft/textures/item/nether_star.png" alt="즐겨찾기" draggable="false"></button><button class="inventory-slot" data-action="split" title="듀얼 뷰"><img src="../assets/minecraft/textures/item/shears.png" alt="듀얼 뷰" draggable="false"></button><button class="inventory-slot" data-action="shield" title="광고 자리 설정"><img src="../assets/minecraft/textures/item/barrier.png" alt="광고 자리 설정" draggable="false"></button></div>
+            <button class="inventory-slot native-output" data-new-bookmark title="사이트 추가"><img src="../assets/minecraft/renders/crafting_table.png" alt="사이트 추가" draggable="false"></button>
+            <span class="native-offhand" aria-hidden="true"></span>
+            <div class="inventory-section-label">인벤토리</div>
+            <div class="inventory-grid" data-role="inventory-grid" aria-label="즐겨찾기 인벤토리"></div>
+            <div class="inventory-hotbar" data-role="inventory-hotbar" aria-label="빠른 도구 핫바"></div>
+          </div>
+        </section>
+
+        <section class="site notes-site" id="site-notes" aria-label="웹 작업 예시" hidden>
+          <nav class="notes-nav"><span class="notes-logo">n.</span><span>개인 공간 <span class="notes-slash">/</span> 브라우저 아이디어</span><span class="notes-nav-right">수정한 내용이 저장됨 <span class="notes-avatar">나</span></span></nav>
+          <div class="notes-document"><span class="doc-cover-label">PERSONAL WORKSPACE</span><div class="doc-icon">✳</div><h2>나만의 브라우저, 첫 페이지</h2><p class="doc-subtitle">필요한 도구는 가까이, 작업할 공간은 넓게.</p><div class="doc-metadata"><span>프로젝트 <b>MINECRAFT?</b></span><span>상태 <b class="draft-label">구상 중</b></span></div><hr><h3>오늘의 아이디어</h3><p>브라우저를 켰을 때 가장 먼저 보이는 건 내가 하려던 일이었으면 좋겠다. 탭과 주소창은 왼쪽에 모아 두고, 작업할 때는 접어 둔다.</p><blockquote>도구는 필요할 때 꺼내 쓰고, 화면은 내가 하는 일에 돌려주기.</blockquote><h3>만들고 싶은 것</h3><label class="doc-check"><input type="checkbox" checked>필요할 때 꺼내는 사이드바</label><label class="doc-check"><input type="checkbox" checked>오래 봐도 편안한 픽셀 UI</label><label class="doc-check"><input type="checkbox">광고 자리에 내가 고른 풍경 넣기</label><div class="doc-callout"><span>↖</span><p>왼쪽 사이드바를 접어 보세요.<br><small>같은 문서가 화면을 더 넓게 사용합니다.</small></p></div></div>
+        </section>
+
+        <section class="site reading-site" id="site-reading" aria-label="글 읽기와 광고 영역 예시" data-ad-mode="collapse" hidden>
+          <nav class="reading-nav"><span>FIELDNOTES<span class="reading-dot">.</span></span><div>에세이 <span>관찰</span> 기록</div><span class="reading-menu">MENU ＋</span></nav>
+          <div class="reading-layout"><article><div class="article-category">ESSAY &nbsp; / &nbsp; EVERYDAY EXPLORATION</div><h2>좋아하는 것들로<br>채우는 작은 공간.</h2><p class="article-deck">화면 한구석의 작은 변화가<br>하루의 분위기를 바꾸기도 한다.</p><div class="article-byline"><span class="byline-dot"></span> FIELDNOTES 편집실 <span>·</span> 5분 읽기</div><div class="article-landscape" role="img" aria-label="숲과 산을 단순한 도형으로 표현한 삽화"><div class="article-sun"></div><div class="article-mountain back"></div><div class="article-mountain front"></div><div class="article-tree a"></div><div class="article-tree b"></div><span>A QUIET PLACE TO BEGIN</span></div><h3>여백이 생기면 보이는 것</h3><p class="article-body">글을 읽다가 문득 시선을 빼앗기는 순간이 있다. 그 자리를 비워 두거나, 내가 좋아하는 풍경으로 채워 보면 어떨까. 보고 싶은 것에 조금 더 오래 머무는 시간. 작은 공간에도 취향은 남는다.</p></article><aside class="article-aside"><div class="article-index"><small>IN THIS STORY</small><span>01 &nbsp; 여백이 생기면</span><span>02 &nbsp; 내가 고른 풍경</span><span>03 &nbsp; 천천히 머무르기</span></div><div class="demo-ad original-ad"><span>ADVERTISEMENT</span><strong>여기는 원래<br>광고가 있던 자리</strong><small>배치 비교를 위한 가상 광고</small><span class="fake-ad-button">자세히 보기 ↗</span></div><figure class="demo-ad replacement-ad"><img id="replacement-image" src="../assets/pixel-landscape.svg" alt="광고 대신 표시할 픽셀 숲 풍경"><figcaption><svg><use href="#i-photo"/></svg>내가 고른 풍경</figcaption></figure><div class="aside-footer"><span>조용히 읽는 시간</span><span>FIELDNOTES</span></div></aside></div>
+        </section>
+      </div>
+
+      <div class="split-drop-overlay" id="split-drop-overlay" hidden><div data-drop-side="left"><svg><use href="#i-split"/></svg><strong>왼쪽에 놓기</strong><span>사이드바는 하나로</span></div><div data-drop-side="right"><svg><use href="#i-split"/></svg><strong>오른쪽에 놓기</strong><span>두 페이지 나란히</span></div></div>
+
+      <section class="shield-popover" id="shield-popover" aria-label="광고 자리 표시 설정" hidden><div class="popover-heading"><span><svg><use href="#i-shield"/></svg>광고 자리</span><button class="icon-btn" data-close-popover aria-label="광고 설정 닫기"><svg><use href="#i-close"/></svg></button></div><p>이 사이트에서는 어떻게 보여줄까요?</p><div class="ad-options"><button data-ad="collapse" aria-pressed="true"><svg><use href="#i-check"/></svg><span>빈자리까지 접기<small>글과 작업에 집중</small></span></button><button data-ad="replace" aria-pressed="false"><svg><use href="#i-photo"/></svg><span>내 그림으로 바꾸기<small>내가 고른 풍경 한 장</small></span></button><button data-ad="original" aria-pressed="false"><svg><use href="#i-globe"/></svg><span>원본과 비교<small>가상 광고를 표시하는 시안 도구</small></span></button></div><label class="upload-art">내 이미지 골라보기<input type="file" id="art-input" accept="image/png,image/jpeg,image/webp,image/gif"></label></section>
+
+      <dialog id="address-dialog" class="address-dialog"><form id="address-form"><div class="command-input"><svg><use href="#i-search"/></svg><input id="command-input" autocomplete="off" aria-label="주소 또는 검색어 입력" placeholder="주소 또는 검색어 입력"><button type="button" class="icon-btn" id="close-address" aria-label="주소 입력 닫기"><svg><use href="#i-close"/></svg></button></div><div class="command-label">화면 시안에서 둘러보기</div><button type="button" class="command-choice" data-scene="home"><svg><use href="#i-globe"/></svg><span>새로운 월드<small>craftside://newtab</small></span><kbd>↵</kbd></button><button type="button" class="command-choice" data-scene="notes"><svg><use href="#i-note"/></svg><span>작업 노트<small>notes.example / workspace</small></span><kbd>↵</kbd></button><button type="button" class="command-choice" data-scene="reading"><svg><use href="#i-book"/></svg><span>읽는 시간<small>fieldnotes.example / essay</small></span><kbd>↵</kbd></button><p class="command-disclaimer">주소창의 모양과 동작을 살펴보는 시안입니다. 외부 사이트로 이동하지 않습니다.</p></form></dialog>
+
+      <dialog id="storage-dialog" class="storage-dialog"><div class="popover-heading"><span id="storage-title">즐겨찾기</span><button class="icon-btn" id="close-storage" aria-label="보관함 닫기"><svg><use href="#i-close"/></svg></button></div><div id="storage-content"></div></dialog>
+      <dialog id="settings-dialog" class="settings-dialog resource-dialog"><div class="popover-heading"><span>설정</span><button class="icon-btn" id="close-settings" aria-label="설정 닫기"><svg><use href="#i-close"/></svg></button></div><div class="settings-profile"><canvas data-player-face width="16" height="16" aria-hidden="true"></canvas><div>ARU_Tris<small>나의 브라우저</small></div></div><label class="settings-row">Language<select id="settings-language" aria-label="Language"><option value="en" lang="en" data-i18n-skip>English</option><option value="ko" lang="ko" data-i18n-skip>한국어</option></select></label><p id="language-error" class="form-error" role="alert" hidden></p><button class="minecraft-button settings-row" id="settings-skin">플레이어 스킨 변경<span>PNG 불러오기 ›</span></button><label class="settings-row">GUI 재질<select id="settings-theme"><option value="stone">Vanilla Tweaks</option><option value="deepslate">심층암</option></select></label><label class="settings-row appearance-size-row"><span>Inventory size</span><input type="range" id="settings-inventory-size" min="75" max="225" step="5" value="150" aria-label="Inventory size"><output id="inventory-size-value" for="settings-inventory-size" data-i18n-skip>150%</output></label><div class="appearance-size-actions"><button type="button" class="minecraft-button" id="reset-inventory-size">Reset size</button><small>Applies to the inventory only. Larger sizes can scroll.</small></div><p id="appearance-error" class="form-error" role="alert" hidden></p><button type="button" class="minecraft-button settings-row" id="settings-resource-packs">Resource packs<span id="resource-pack-summary">Default · Vanilla Tweaks</span></button><button type="button" class="minecraft-button settings-row" id="settings-import-chrome" hidden>Import from Chrome<span>Passwords, cookies and bookmarks</span></button><button class="minecraft-button settings-row" data-new-bookmark>인벤토리에 사이트 추가<span>아이콘 직접 선택 ›</span></button><h3 class="settings-section-title">Sound &amp; ambience</h3><label class="settings-row sound-row">Sound effects<input type="checkbox" id="settings-effects" checked></label><label class="settings-row sound-row">Effects volume<input type="range" id="settings-effects-volume" min="0" max="100" value="40"><output id="effects-volume-value" for="settings-effects-volume">40%</output></label><div class="sound-controls"><button type="button" class="minecraft-button" id="test-sound">Test sound</button><button type="button" class="minecraft-button" id="preview-news-alert">Preview news alert</button></div><label class="settings-row sound-row">Minecraft News alerts<input type="checkbox" id="settings-news" checked></label><p id="news-status" class="news-status" role="status">Checking Minecraft News…</p><p class="settings-help">Music follows your computer's time. Control playback and volume in the sidebar.<br>Rare cave sounds play only from midnight to 06:00, with music and sound effects enabled.</p><p id="ambience-error" class="ambience-error" role="alert" hidden></p><h3 class="settings-section-title">Unread indicators</h3>
+        <p id="unread-news-status" class="gmail-session-status" role="status"></p>
+        <p id="gmail-session-status" class="gmail-session-status" role="status"></p>
+        <p id="gmail-session-help" class="unread-settings-help"></p>
+        <div class="sound-controls"><button type="button" class="minecraft-button" id="open-gmail-session">Open Gmail</button><button type="button" class="minecraft-button" id="preview-enchantment">Preview enchantment</button></div>
+        <p class="unread-settings-help">Unread news enchants the Water Bucket. Unread mail enchants Gmail. Opening Gmail does not mark messages as read.</p>
+        <p id="unread-save-error" class="form-error" role="alert" hidden>Could not save unread news. Changes apply for this session.</p>
+        <p class="settings-help">인벤토리 배치와 착용한 갑옷은 자동 저장됩니다.<br>북마크는 현재 브라우저의 새 탭에서 열립니다.</p><p id="inventory-storage-warning" class="form-error" role="status" hidden></p></dialog>
+      <dialog id="migration-dialog" class="resource-dialog migration-dialog" aria-labelledby="migration-title">
+        <div class="popover-heading"><span id="migration-title">Import from Chrome</span><button type="button" class="icon-btn" id="close-migration" aria-label="Close import"><svg><use href="#i-close"/></svg></button></div>
+        <p id="migration-counts" class="migration-help" role="status"></p>
+        <h3>Passwords</h3><p class="migration-help">In Chrome, open Google Password Manager → Settings → Export passwords. Import the downloaded CSV here.</p>
+        <div class="migration-buttons"><button type="button" class="minecraft-button" id="import-password-csv">Import password CSV</button><button type="button" class="minecraft-button" id="view-imported-passwords">Saved passwords</button></div>
+        <p class="migration-help">Imported passwords are encrypted with Windows. The CSV is plain text; delete your export when finished.</p><p id="migration-password-status" class="migration-help" role="status"></p>
+        <h3>Cookies and Chrome bookmarks</h3><ol class="migration-help"><li>Open the helper folder below. In Chrome, go to chrome://extensions, enable Developer mode, choose Load unpacked, and select that folder.</li><li>Start a transfer here, then open Chrome Transfer Helper from Chrome's extensions menu.</li><li>Paste the one-time code into the helper and choose Transfer now.</li></ol>
+        <div class="migration-buttons"><button type="button" class="minecraft-button" id="open-chrome-helper">Open helper folder</button><button type="button" class="minecraft-button" id="start-chrome-transfer">Start transfer</button><button type="button" class="minecraft-button" id="view-chrome-bookmarks">Chrome bookmarks</button></div>
+        <label class="migration-check"><input type="checkbox" id="replace-chrome-cookies">Replace existing cookies in this browser</label>
+        <div id="transfer-code-row" class="transfer-code-row" hidden><label>One-time code<input id="transfer-code" readonly autocomplete="off" spellcheck="false" data-i18n-skip></label><button type="button" class="minecraft-button" id="copy-transfer-code">Copy code</button></div>
+        <p id="migration-transfer-status" class="migration-help" role="status">No transfer is running.</p><button type="button" class="minecraft-button" id="stop-chrome-transfer" hidden>Cancel transfer</button>
+        <p class="migration-help">Data goes directly to your browser on this computer. No files or cloud upload.</p><p class="migration-help">Some sites may ask you to sign in again. Partitioned cookies and device-bound keys cannot be transferred.</p><p class="migration-help">Passkeys, payment cards, browsing history and extensions are not imported.</p><p id="migration-error" class="form-error" role="alert" hidden></p>
+      </dialog>
+      <dialog id="migration-library-dialog" class="resource-dialog migration-dialog migration-library-dialog" aria-labelledby="migration-library-title"><div class="popover-heading"><span id="migration-library-title">Saved passwords</span><button type="button" class="icon-btn" id="close-migration-library" aria-label="Close imported data"><svg><use href="#i-close"/></svg></button></div><input type="search" id="migration-library-query" placeholder="Search imported sites" aria-label="Search imported sites" autocomplete="off"><p id="migration-library-count" class="migration-help" role="status"></p><div id="migration-library-rows"></div><p id="migration-library-error" class="form-error" role="alert" hidden></p></dialog>
+      <dialog id="resource-packs-dialog" class="resource-dialog resource-packs-dialog" aria-labelledby="resource-pack-title">
+        <div class="pack-heading"><h2 id="resource-pack-title">Resource packs</h2><button type="button" class="icon-btn" id="close-resource-packs" aria-label="Close resource packs"><svg><use href="#i-close"/></svg></button></div>
+        <p class="pack-intro">Your Minecraft packs, in your browser. Import a Java Edition ZIP, select it, then apply.</p>
+        <div class="pack-columns">
+          <section class="pack-column"><h3>Available</h3><div id="resource-pack-available" class="pack-list"></div></section>
+          <section class="pack-column"><h3>Selected · Top has priority</h3><div id="resource-pack-selected" class="pack-list"></div><div class="pack-default"><img src="../assets/craftside-mark.svg" alt=""><span>Default · Vanilla Tweaks<small>Always available as a fallback</small></span></div></section>
+        </div>
+        <div class="pack-toolbar"><button type="button" class="minecraft-button" id="import-resource-pack">Import ZIP</button><button type="button" class="minecraft-button" id="resource-pack-defaults">Use defaults</button><span>Drop ZIP files here · Saved on this device</span></div>
+        <input id="resource-pack-file" type="file" accept=".zip,application/zip" multiple hidden>
+        <p id="resource-pack-status" class="pack-status" role="status"></p><p id="resource-pack-applied" class="pack-applied"></p><p id="resource-pack-pending" class="pack-pending" hidden>Changes are not applied yet.</p>
+        <p class="pack-limit">Supports item textures, static item models, inventory and creative UI, buttons, armor, animated item textures, daytime panoramas and matching sounds. Shaders, mod features and pack fonts are not used.</p>
+        <p id="resource-pack-error" class="form-error" role="alert" hidden></p>
+        <div class="pack-footer"><button type="button" class="minecraft-button" id="cancel-resource-packs">Cancel</button><button type="button" class="minecraft-button" id="apply-resource-packs">Apply packs</button></div>
+      </dialog>
+      <dialog id="bookmark-dialog" class="bookmark-dialog resource-dialog" aria-labelledby="bookmark-dialog-title"><form id="bookmark-form" novalidate><div class="popover-heading"><span id="bookmark-dialog-title">사이트 추가</span><button type="button" class="icon-btn" id="close-bookmark" aria-label="사이트 편집 닫기"><svg><use href="#i-close"/></svg></button></div><div class="bookmark-assignment"><span class="assigned-item"><img id="assigned-item-image" alt="배정된 아이템" draggable="false"></span><div><strong id="assigned-item-name" data-i18n-skip></strong><small id="assigned-item-description">처음에는 빈 아이템을 무작위로 지정해요</small></div><button type="button" id="assign-icon" class="minecraft-button">아이콘 지정</button></div><label>사이트 이름<input id="bookmark-name" maxlength="80" required autocomplete="off" placeholder="예: 나의 작업실"></label><label>사이트 주소<input id="bookmark-url" maxlength="2048" required autocomplete="url" placeholder="https://example.com"></label><p id="bookmark-error" class="form-error" role="alert" hidden></p><div class="dialog-actions"><button type="button" id="cancel-bookmark" class="minecraft-button">취소</button><button type="submit" class="minecraft-button" id="save-bookmark">추가</button></div></form></dialog>
+      <dialog id="icon-dialog" class="creative-dialog resource-dialog" aria-labelledby="creative-heading">
+        <div class="creative-heading"><span id="creative-heading">크리에이티브 인벤토리</span><button type="button" class="icon-btn" id="close-icon-picker" aria-label="아이콘 선택 닫기"><svg><use href="#i-close"/></svg></button></div>
+        <div class="creative-workbench">
+          <div id="creative-tabs" class="creative-tabs" role="tablist" aria-label="아이템 분류"></div>
+          <div class="creative-panel">
+            <label class="creative-search-label" for="icon-search">아이템 검색</label><input id="icon-search" type="search" autocomplete="off" placeholder="이름 / ID" maxlength="80" aria-label="아이콘 검색">
+            <div id="creative-grid" class="creative-grid" role="tabpanel" aria-label="선택할 아이콘"></div>
+            <p id="creative-empty" class="creative-empty" hidden>찾는 아이템이 없어요</p>
+            <input id="creative-scroll" class="creative-scroll" type="range" min="0" max="0" value="0" step="1" aria-label="아이템 목록 스크롤">
+            <div id="creative-hotbar" class="creative-hotbar" aria-label="내 핫바 미리보기"></div>
+          </div>
+          <div id="creative-tooltip" class="creative-tooltip" role="tooltip" hidden><strong></strong><span></span></div>
+        </div>
+        <div class="creative-footer"><div><img id="creative-current-image" alt="" draggable="false"><span>현재 아이콘<strong id="creative-current-name"></strong></span></div><button type="button" id="cancel-icon-picker" class="minecraft-button">취소</button></div>
+        <p class="creative-help"><span id="creative-count" role="status"></span><span>아이템을 누르면 지정 · 사용 중인 아이콘은 회색 표시</span></p>
+      </dialog>
+      <div id="bookmark-menu" class="bookmark-menu resource-dialog" role="menu" aria-label="북마크 메뉴" hidden></div>
+      <div id="item-tooltip" class="item-tooltip" role="tooltip" hidden><strong></strong><span></span><small></small></div>
+      <div id="inventory-notice" class="inventory-notice" role="status" hidden><span></span><button id="undo-bookmark" hidden>되돌리기</button></div>
+      <dialog id="skin-dialog" class="skin-dialog"><div class="popover-heading"><span>설정 / 플레이어 스킨</span><button class="icon-btn" id="close-skin" aria-label="스킨 설정 닫기"><svg><use href="#i-close"/></svg></button></div><div class="skin-dialog-body"><div class="skin-large-preview"><canvas data-player-canvas data-skin-only width="300" height="400" class="player-canvas" role="img" aria-label="스킨 미리보기. 끌어서 회전할 수 있습니다."></canvas></div><div class="skin-settings"><p class="skin-intro">ARU_Tris</p><button type="button" id="choose-skin" class="minecraft-button skin-upload">스킨 PNG 불러오기</button><input id="skin-file" type="file" accept="image/png,.png" hidden><p id="skin-description">ARU_Tris.png</p><label>체형<select id="skin-model"><option value="classic">클래식 · 4px 팔</option><option value="slim">슬림 · 3px 팔</option></select></label><label class="skin-check"><input id="skin-layer" type="checkbox" checked>겉옷 레이어 표시</label><label>방향<input id="skin-rotation" type="range" min="-180" max="180" value="-20" aria-label="플레이어 회전"></label><button class="minecraft-button" id="reset-skin">ARU_Tris 스킨으로 복원</button></div></div><p id="skin-error" role="alert" hidden></p><p class="skin-footnote">64×64 또는 64×32 PNG · 이 브라우저에 저장 · 서버 업로드 없음</p></dialog>
+      <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+      <div id="unread-preview-note" class="unread-preview-note" role="status" hidden><span>Enchantment preview · No real notifications changed</span><button type="button" id="end-enchantment-preview">Done</button></div>
+      <div id="news-toast" class="advancement-toast" role="status" aria-live="polite" hidden><a id="news-toast-link" target="_blank" rel="noopener noreferrer"><img src="../assets/minecraft/textures/item/water_bucket.png" alt="" draggable="false"><span><strong id="news-toast-heading">Advancement Made!</strong><span id="news-toast-title" data-user-content></span></span></a><button type="button" id="dismiss-news" aria-label="Dismiss news" title="Dismiss news">×</button></div>
+    </section>
+
+    <footer class="review-footnote"><p><span class="footnote-dot"></span>화면·동작 설계 시안 <span class="footnote-divider">/</span> 실제 웹 탐색·광고 차단은 연결 전</p><p id="layout-readout">고정 사이드바 264px · 페이지와 나란히</p></footer>
+    <section class="design-notes" aria-label="설계 방향"><div><span>01 / DUAL VIEW</span><h2>두 화면, 하나의 사이드바.</h2><p>탭을 오른쪽으로 끌어서 나란히.<br>가운데 경계로 비율도 자유롭게.</p></div><div><span>02 / INVENTORY</span><h2>새 탭이 내 인벤토리.</h2><p>플레이어와 장비 슬롯, 작업대와 핫바.<br>웹사이트의 글꼴과 색은 그대로.</p></div><div><span>03 / MY PLAYER</span><h2>스킨까지 내 취향으로.</h2><p>내 PNG 스킨을 불러와 입히기.<br>다시 열어도 같은 플레이어로.</p></div></section>
+  </main>
+</body>
+</html>

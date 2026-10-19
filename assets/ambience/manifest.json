@@ -1,0 +1,236 @@
+{
+  "backgrounds": {
+    "cave": [
+      {
+        "id": "cave-1.17-0",
+        "src": "../assets/ambience/backgrounds/cave-1.17-0.png"
+      },
+      {
+        "id": "cave-1.17-1",
+        "src": "../assets/ambience/backgrounds/cave-1.17-1.png"
+      },
+      {
+        "id": "cave-1.17-2",
+        "src": "../assets/ambience/backgrounds/cave-1.17-2.png"
+      }
+    ],
+    "day": [
+      {
+        "id": "day-1.19-0",
+        "src": "../assets/ambience/backgrounds/day-1.19-0.png"
+      },
+      {
+        "id": "day-26-0",
+        "src": "../assets/ambience/backgrounds/day-26-0.png"
+      },
+      {
+        "id": "day-27-0",
+        "src": "../assets/ambience/backgrounds/day-27-0.png"
+      },
+      {
+        "id": "day-30-0",
+        "src": "../assets/ambience/backgrounds/day-30-0.png"
+      },
+      {
+        "id": "day-village",
+        "src": "../assets/ambience/backgrounds/day-village.png"
+      }
+    ],
+    "sunset": [
+      {
+        "id": "sunset-1.18-0",
+        "src": "../assets/ambience/backgrounds/sunset-1.18-0.png"
+      },
+      {
+        "id": "sunset-1.20-0",
+        "src": "../assets/ambience/backgrounds/sunset-1.20-0.png"
+      }
+    ],
+    "night": [
+      {
+        "id": "night-forest",
+        "src": "../assets/ambience/backgrounds/night-forest.jpg"
+      }
+    ]
+  },
+  "tracks": {
+    "ancestry": {
+      "id": "ancestry",
+      "title": "Ancestry",
+      "src": "../assets/ambience/music/ancestry.ogg"
+    },
+    "clark": {
+      "id": "clark",
+      "title": "Clark",
+      "src": "../assets/ambience/music/clark.ogg"
+    },
+    "danny": {
+      "id": "danny",
+      "title": "Danny",
+      "src": "../assets/ambience/music/danny.ogg"
+    },
+    "deeper": {
+      "id": "deeper",
+      "title": "Deeper",
+      "src": "../assets/ambience/music/deeper.ogg"
+    },
+    "dry_hands": {
+      "id": "dry_hands",
+      "title": "Dry Hands",
+      "src": "../assets/ambience/music/dry_hands.ogg"
+    },
+    "echo_in_the_wind": {
+      "id": "echo_in_the_wind",
+      "title": "Echo In The Wind",
+      "src": "../assets/ambience/music/echo_in_the_wind.ogg"
+    },
+    "floating_dream": {
+      "id": "floating_dream",
+      "title": "Floating Dream",
+      "src": "../assets/ambience/music/floating_dream.ogg"
+    },
+    "haggstrom": {
+      "id": "haggstrom",
+      "title": "Haggstrom",
+      "src": "../assets/ambience/music/haggstrom.ogg"
+    },
+    "infinite_amethyst": {
+      "id": "infinite_amethyst",
+      "title": "Infinite Amethyst",
+      "src": "../assets/ambience/music/infinite_amethyst.ogg"
+    },
+    "key": {
+      "id": "key",
+      "title": "Key",
+      "src": "../assets/ambience/music/key.ogg"
+    },
+    "living_mice": {
+      "id": "living_mice",
+      "title": "Living Mice",
+      "src": "../assets/ambience/music/living_mice.ogg"
+    },
+    "mice_on_venus": {
+      "id": "mice_on_venus",
+      "title": "Mice On Venus",
+      "src": "../assets/ambience/music/mice_on_venus.ogg"
+    },
+    "minecraft": {
+      "id": "minecraft",
+      "title": "Minecraft",
+      "src": "../assets/ambience/music/minecraft.ogg"
+    },
+    "oxygene": {
+      "id": "oxygene",
+      "title": "Oxygene",
+      "src": "../assets/ambience/music/oxygene.ogg"
+    },
+    "subwoofer_lullaby": {
+      "id": "subwoofer_lullaby",
+      "title": "Subwoofer Lullaby",
+      "src": "../assets/ambience/music/subwoofer_lullaby.ogg"
+    },
+    "sweden": {
+      "id": "sweden",
+      "title": "Sweden",
+      "src": "../assets/ambience/music/sweden.ogg"
+    },
+    "wet_hands": {
+      "id": "wet_hands",
+      "title": "Wet Hands",
+      "src": "../assets/ambience/music/wet_hands.ogg"
+    }
+  },
+  "playlists": {
+    "day": [
+      "minecraft",
+      "sweden",
+      "haggstrom",
+      "clark",
+      "danny",
+      "living_mice",
+      "mice_on_venus",
+      "subwoofer_lullaby"
+    ],
+    "sunset": [
+      "sweden",
+      "mice_on_venus",
+      "subwoofer_lullaby",
+      "wet_hands"
+    ],
+    "night": [
+      "key",
+      "dry_hands",
+      "wet_hands",
+      "oxygene",
+      "living_mice"
+    ],
+    "cave": [
+      "ancestry",
+      "deeper",
+      "infinite_amethyst",
+      "floating_dream",
+      "echo_in_the_wind"
+    ]
+  },
+  "effects": {
+    "click": [
+      "../assets/ambience/sounds/click.ogg"
+    ],
+    "toastIn": [
+      "../assets/ambience/sounds/toastIn.ogg"
+    ],
+    "toastOut": [
+      "../assets/ambience/sounds/toastOut.ogg"
+    ],
+    "challenge": [
+      "../assets/ambience/sounds/challenge.ogg"
+    ],
+    "equip_generic": [
+      "../assets/ambience/sounds/equip_generic.ogg"
+    ],
+    "equip_leather": [
+      "../assets/ambience/sounds/equip_leather.ogg"
+    ],
+    "equip_iron": [
+      "../assets/ambience/sounds/equip_iron.ogg"
+    ],
+    "equip_gold": [
+      "../assets/ambience/sounds/equip_gold.ogg"
+    ],
+    "equip_diamond": [
+      "../assets/ambience/sounds/equip_diamond.ogg"
+    ],
+    "equip_netherite": [
+      "../assets/ambience/sounds/equip_netherite.ogg"
+    ],
+    "equip_copper": [
+      "../assets/ambience/sounds/equip_copper.ogg"
+    ],
+    "cave": [
+      "../assets/ambience/sounds/cave1.ogg",
+      "../assets/ambience/sounds/cave2.ogg",
+      "../assets/ambience/sounds/cave3.ogg",
+      "../assets/ambience/sounds/cave4.ogg",
+      "../assets/ambience/sounds/cave5.ogg",
+      "../assets/ambience/sounds/cave6.ogg",
+      "../assets/ambience/sounds/cave7.ogg",
+      "../assets/ambience/sounds/cave8.ogg",
+      "../assets/ambience/sounds/cave9.ogg",
+      "../assets/ambience/sounds/cave10.ogg",
+      "../assets/ambience/sounds/cave11.ogg",
+      "../assets/ambience/sounds/cave12.ogg",
+      "../assets/ambience/sounds/cave13.ogg",
+      "../assets/ambience/sounds/cave14.ogg",
+      "../assets/ambience/sounds/cave15.ogg",
+      "../assets/ambience/sounds/cave16.ogg",
+      "../assets/ambience/sounds/cave17.ogg",
+      "../assets/ambience/sounds/cave18.ogg",
+      "../assets/ambience/sounds/cave19.ogg",
+      "../assets/ambience/sounds/cave20.ogg",
+      "../assets/ambience/sounds/cave21.ogg",
+      "../assets/ambience/sounds/cave22.ogg",
+      "../assets/ambience/sounds/cave23.ogg"
+    ]
+  },
+  "toast": "../assets/ambience/gui/advancement.png"
+}

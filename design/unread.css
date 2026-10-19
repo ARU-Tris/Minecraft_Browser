@@ -1,0 +1,13 @@
+/* Actual Vanilla Tweaks enchantment texture, clipped to each item's own alpha. */
+.bookmark-slot,.equipment-slot,.bookmark-library button[data-notification-kind] { position:relative; }
+.item-enchantment { position:absolute;left:5.555555%;top:5.555555%;width:88.888889%;height:88.888889%;pointer-events:none;mask-image:var(--item-mask);mask-size:100% 100%;mask-repeat:no-repeat;mask-mode:alpha;-webkit-mask-image:var(--item-mask);-webkit-mask-size:100% 100%;-webkit-mask-repeat:no-repeat;image-rendering:pixelated;overflow:hidden;mix-blend-mode:screen; }
+.item-enchantment::before,.item-enchantment::after { content:"";position:absolute;inset:0;background-image:url('../assets/notifications/enchanted_glint_item.png');background-repeat:repeat;background-size:128px 128px;mix-blend-mode:screen;opacity:.85;animation:enchantment-flow 4.7s linear infinite; }
+.item-enchantment::after { opacity:.5;background-size:92px 92px;animation:enchantment-flow-reverse 7.3s linear infinite; }
+.bookmark-library .item-enchantment { left:5px;top:50%;width:28px;height:28px;transform:translateY(-50%); }
+@keyframes enchantment-flow { from { background-position:0 0; } to { background-position:128px -128px; } }
+@keyframes enchantment-flow-reverse { from { background-position:92px 0; } to { background-position:0 92px; } }
+.unread-settings-help { margin:12px 0;color:#555;font-size:10px;line-height:1.8; }
+.gmail-session-status { color:#555;font-size:11px;line-height:1.8;margin:10px 0; }
+.unread-preview-note { position:absolute;z-index:40;bottom:12px;left:50%;transform:translateX(-50%);padding:10px 13px;background:#100010f5;border:2px solid #62399b;color:#e9d8ff;display:flex;align-items:center;gap:14px;font-size:11px;line-height:1.6;max-width:calc(100% - 24px); }
+.unread-preview-note button { border:1px solid #b88cdd;color:#eee;background:#3a2358;font:inherit;padding:3px 10px; }
+@media(prefers-reduced-motion:reduce) { .item-enchantment::before,.item-enchantment::after { animation:none; } }

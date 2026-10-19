@@ -1,0 +1,14 @@
+node_modules/
+release/
+*.log
+/design/evidence/
+/ref/
+**/profile/
+**/profiles/
+.env
+.env.*
+!.env.example
+*.enc
+*.csv
+__pycache__/
+*.pyc

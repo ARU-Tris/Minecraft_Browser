@@ -1,0 +1,8 @@
+{
+  "sources": [
+    "https://easylist.to/easylist/easylist.txt",
+    "https://easylist.to/easylist/easyprivacy.txt"
+  ],
+  "checkedAt": "2026-10-19T13:24:22.794Z",
+  "license": "See the license and upstream references in each bundled filter list."
+}

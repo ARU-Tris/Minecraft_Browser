@@ -1,0 +1,41 @@
+{
+  "recordedOn": "2026-10-19",
+  "referenceArchives": [
+    {
+      "path": "ref\\minecraft.zip",
+      "bytes": 4932,
+      "sha256AtStart": "243246ad4b5cd0cdd3088220d29c1ee7f1bdced2251fe8d58a128ae234f79443",
+      "sha256AtFinish": "243246ad4b5cd0cdd3088220d29c1ee7f1bdced2251fe8d58a128ae234f79443",
+      "unchanged": true
+    },
+    {
+      "path": "ref\\갈무리11.zip",
+      "bytes": 883152,
+      "sha256AtStart": "61b78e8098fcf5ec3f2b188b1d3231c4f1ec861d74880724873f8f91c20956c8",
+      "sha256AtFinish": "61b78e8098fcf5ec3f2b188b1d3231c4f1ec861d74880724873f8f91c20956c8",
+      "unchanged": true
+    }
+  ],
+  "fontCopies": [
+    {
+      "path": "assets\\fonts\\galmuri11.ttf",
+      "bytes": 5363364,
+      "sha256": "fa47a1b005b0b025a35d0ed291f9ef9bc00ea3c911e9fe8588dee7348892c5cd",
+      "codepoints": 20924,
+      "containsHangulSample": true
+    },
+    {
+      "path": "assets\\fonts\\Minecraft.ttf",
+      "bytes": 14488,
+      "sha256": "bd47314d301e50ff4d109bff28dfcf637cb7eb13945480259878b848875acc65",
+      "codepoints": 107,
+      "containsHangulSample": false
+    }
+  ],
+  "newAssets": [
+    "assets/craftside-mark.svg",
+    "assets/pixel-landscape.svg"
+  ],
+  "licenseStatus": "No separate license text was present in the supplied ZIP archives. Distribution review is deferred until packaging.",
+  "scope": "Concept only. Reference ZIP files preserved. No EXE or installer generated."
+}

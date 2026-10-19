@@ -1,0 +1,14 @@
+'use strict';
+const { spawn } = require('node:child_process'), fs = require('node:fs'), path = require('node:path');
+const root = path.resolve(__dirname,'..'), output = path.join(root,process.env.MC_SMOKE_ROOT || 'design/evidence/v12',process.env.MC_SMOKE_NAME || ('native-'+Date.now()));
+fs.mkdirSync(output,{recursive:true});
+const installed = process.env.MC_SMOKE_EXE;
+const command = installed || require('electron'), args = [...(installed ? [] : [root]),'--smoke','--profile='+path.join(output,'profile'),'--smoke-output='+output];
+if(process.env.MC_SMOKE_SUITE)args.push('--smoke-suite='+process.env.MC_SMOKE_SUITE);
+const env = {...process.env}; delete env.ELECTRON_RUN_AS_NODE;
+const child = spawn(command,args,{cwd:root,windowsHide:true,env});
+const log = fs.createWriteStream(path.join(output,'runtime.log')); child.stdout.on('data',chunk=>{process.stdout.write(chunk);log.write(chunk);}); child.stderr.on('data',chunk=>{process.stderr.write(chunk);log.write(chunk);});
+let timedOut=false;
+const timer = setTimeout(()=>{timedOut=true;child.kill();},180000);
+child.on('error',error=>{console.error(error);clearTimeout(timer);process.exitCode=1;});
+child.on('exit',code=>{clearTimeout(timer);log.end();let result;try{result=JSON.parse(fs.readFileSync(path.join(output,'result.json'),'utf8'));}catch{}process.exitCode=typeof code==='number'&&code!==0?code:timedOut||!result||result.failure||!result.passed?1:0;});

@@ -1,0 +1,74 @@
+'use strict';
+const assert = require('node:assert/strict'), fs = require('node:fs'), path = require('node:path'), http = require('node:http'), crypto = require('node:crypto');
+const pause = ms => new Promise(resolve=>setTimeout(resolve,ms));
+async function until(test, label, timeout=30000) { const start=Date.now(); while(Date.now()-start<timeout){if(await test())return;await pause(100);} throw Error('Timed out: '+label); }
+async function capture(contents) { let failure; for(let i=0;i<20;i++){try{return await contents.capturePage();}catch(error){failure=error;await pause(100);}}throw failure; }
+async function run({win,tabs,views,command,snapshot,browserSession,blocker,app,output}) {
+  if (!output) throw Error('Smoke output required'); fs.mkdirSync(output,{recursive:true});
+  const checks=[],errors=[]; const check=(name,run)=>{run();checks.push({name,passed:true});};
+  win.webContents.on('console-message',(_event,...args)=>{const detail=args[0]; if(typeof detail==='object' && detail.level==='error')errors.push(detail.message);});
+  const read = code=>win.webContents.executeJavaScript(code);
+  await until(()=>read("document.querySelector('#browser-shell').dataset.resourcePacks === '1'"),'default resource pack',45000);
+  check('Provided resource pack applies on an untouched native profile',()=>assert.equal(app.getName(),'MINECRAFT?'));
+  const dom=await read("({lang:document.documentElement.lang, native:document.documentElement.classList.contains('native'), inventory:document.querySelectorAll('#pane-left [data-role=inventory-grid] button').length, errors:document.querySelector('#resource-pack-summary').textContent, title:document.title})");
+  check('English native inventory is mounted',()=>{assert.equal(dom.lang,'en');assert.equal(dom.native,true);assert.equal(dom.title,'MINECRAFT?');assert.equal(dom.inventory,27);});
+  fs.writeFileSync(path.join(output,'01-inventory.png'),(await win.webContents.capturePage()).toPNG());
+  const server=http.createServer((request,response)=>{response.setHeader('Content-Type','text/html');response.end('<!doctype html><title>'+ (request.url.includes('two')?'Second page':'First page') +'</title><h1>Browser engine fixture</h1><a href="/two">Next page</a><script>document.body.dataset.bridge=typeof craftsideBrowser;document.body.dataset.node=typeof require;</script>');});
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve)); const origin='http://127.0.0.1:'+server.address().port;
+  try {
+    const left=tabs.left; await command('navigate',{url:origin+'/one'});
+    await until(()=>views.get(left)?.webContents.getTitle()==='First page','first real website');
+    const wc=views.get(left).webContents;
+    check('Actual native engine loads a website and publishes its title',()=>assert.equal(tabs.get(left).url,origin+'/one'));
+    await until(()=>views.get(left).getVisible(),'first website bounds');
+    fs.writeFileSync(path.join(output,'04-real-web-engine.png'),(await capture(wc)).toPNG());
+    const security=await wc.executeJavaScript("({bridge:document.body.dataset.bridge,node:document.body.dataset.node})");
+    check('External pages have no native bridge or Node',()=>{assert.equal(security.bridge,'undefined');assert.equal(security.node,'undefined');assert.equal(wc.getLastWebPreferences().sandbox,true);});
+    await wc.loadURL(origin+'/two'); await until(()=>tabs.get(left).title==='Second page','redirect/title');
+    await command('back'); await until(()=>wc.getTitle()==='First page','back navigation');
+    await command('forward'); await until(()=>wc.getTitle()==='Second page','forward navigation');
+    check('Back and forward use real browser history',()=>assert.equal(wc.getURL(),origin+'/two'));
+    await command('navigate',{url:origin+'/one',newTab:true}); const right=tabs.active().id;
+    await until(()=>views.get(right)?.webContents.getTitle()==='First page','second real tab');
+    await command('split',{id:right,side:'right'}); await until(()=>[...views.values()].filter(view=>view.getVisible()).length===2,'dual native views');
+    check('Both real sites share a single sidebar',()=>{assert.equal(tabs.left,left);assert.equal(tabs.right,right);});
+    check('Native page bounds match two non-overlapping visible panes',()=>{const a=views.get(left).getBounds(),b=views.get(right).getBounds();assert.ok(a.width>200&&b.width>200);assert.ok(a.x+a.width<=b.x);assert.ok(a.y>=30);});
+    await command('advancement',{title:'Native notification test',heading:'Advancement Made!'});
+    const {BrowserWindow}=require('electron');
+    const popup=BrowserWindow.getAllWindows().find(window=>window!==win);
+    await until(()=>popup?.isVisible(),'notification above native websites');
+    check('Advancement notification is a separate owned popup above web views',()=>{assert.equal(popup.getParentWindow(),win);assert.equal(popup.webContents.getLastWebPreferences().sandbox,true);});
+    await pause(700);fs.writeFileSync(path.join(output,'05-native-notification.png'),(await popup.webContents.capturePage()).toPNG());
+    await command('advancement',{hide:true});await until(()=>popup.isDestroyed(),'notification dismissal');
+    fs.writeFileSync(path.join(output,'02-dual-ui.png'),(await win.capturePage()).toPNG());
+    await command('toggleSplit'); await until(()=>[...views.values()].filter(view=>view.getVisible()).length===1,'single native view');
+    check('Closing dual view preserves left and retains the right tab',()=>{assert.equal(tabs.left,left);assert.equal(tabs.right,null);assert.ok(tabs.get(right));});
+    await command('navigate',{url:'craftside://inventory'}); await until(()=>!views.get(left).getVisible(),'inventory restore');
+    check('Inventory remains usable after visiting external sites',()=>assert.equal(tabs.get(left).url,'craftside://inventory'));
+    const {Request}=require('@ghostery/adblocker');
+    check('Bundled ads/tracking filter engine blocks a known ad request',()=>assert.equal(blocker.match(Request.fromRawDetails({url:'https://googleads.g.doubleclick.net/pagead/ads',sourceUrl:'https://example.com',type:'script'})).match,true));
+    check('The native browsing session has blocking enabled',()=>assert.equal(blocker.isBlockingEnabled(browserSession),true));
+    await command('ad',{mode:'original'});check('Ad blocking can be disabled',()=>assert.equal(blocker.isBlockingEnabled(browserSession),false));await command('ad',{mode:'collapse'});
+    const data=await read("new Promise((resolve,reject)=>{const r=indexedDB.open('craftside:resource-packs:v1',1);r.onsuccess=()=>{const q=r.result.transaction('state').objectStore('state').get('library');q.onsuccess=()=>{resolve({active:q.result.active,packs:q.result.packs.map(p=>({id:p.id,name:p.name,count:p.count})),revision:q.result.revision});r.result.close();};q.onerror=reject;};r.onerror=reject;})");
+    check('Saved active pack is the exact user ZIP',()=>{assert.equal(data.active.length,1);assert.equal(data.active[0],'0d01358f39e174fe1af6570fd608a2602e4c1dbe506c3e6d63bf86e26599deaf');assert.equal(data.packs[0].count,479);});
+    win.webContents.reload(); await until(()=>read("document.querySelector('#browser-shell')?.dataset.resourcePacks === '1'"),'reload persistence',45000);
+    const reread=await read("CraftPackDB.create(indexedDB).read().then(state=>({revision:state.revision,active:state.active}))");
+    check('Profile reload preserves the resource pack without reseeding',()=>{assert.equal(reread.revision,1);assert.deepEqual(reread.active,data.active);});
+    await read("CraftI18n.setLanguage('ko')");
+    const ko=await read("({lang:document.documentElement.lang,title:document.querySelector('#tab-list .tab-select span').textContent})");
+    check('Native tab title follows Korean without translating user page titles',()=>{assert.equal(ko.lang,'ko');assert.equal(ko.title,'내 인벤토리');});
+    await read("CraftI18n.setLanguage('en')");
+    const beforePrefs=await read("({inventory:localStorage.getItem('craftside:inventory:v1'),skin:localStorage.getItem('craftside:player:v2')})");
+    await read("CraftPackDB.create(indexedDB).read().then(state=>CraftPackDB.create(indexedDB).write({...state,active:[]},state.revision))");
+    win.webContents.reload();await until(()=>read("document.querySelector('#browser-shell')?.dataset.resourcePacks === '0'"),'disabled pack remains disabled',45000);
+    const afterPrefs=await read("({inventory:localStorage.getItem('craftside:inventory:v1'),skin:localStorage.getItem('craftside:player:v2')})");
+    check('Disabled pack stays disabled after restart and preserves inventory/skin',()=>assert.deepEqual(afterPrefs,beforePrefs));
+    await read("CraftPackDB.create(indexedDB).read().then(state=>CraftPackDB.create(indexedDB).write({...state,active:[state.packs[0].id]},state.revision))");
+    win.webContents.reload();await until(()=>read("document.querySelector('#browser-shell')?.dataset.resourcePacks === '1'"),'restored provided pack',45000);
+    fs.writeFileSync(path.join(output,'03-restored.png'),(await win.webContents.capturePage()).toPNG());
+    check('No renderer errors during the native smoke test',()=>assert.deepEqual(errors,[]));
+    const result={version:app.getVersion(),electron:process.versions.electron,chrome:process.versions.chrome,pack:data,checks,passed:checks.length,rendererErrors:errors,profile:app.getPath('userData')};
+    fs.writeFileSync(path.join(output,'result.json'),JSON.stringify(result,null,2));console.log(JSON.stringify({nativePassed:checks.length,output}));
+  } finally { server.close(); }
+}
+module.exports={run};

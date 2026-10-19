@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges">
+  <path fill="#b2d1ce" d="M0 0h1600v1000H0z"/>
+  <path fill="#c6dad0" d="M0 260h1600v260H0z"/>
+  <path fill="#d9e4d2" d="M0 450h1600v240H0z"/>
+  <path fill="#eaf0d7" d="M1170 154h94v94h-94z"/>
+  <g fill="#f0f0dd" opacity=".65"><path d="M70 120h126v20H70zm45-20h80v20h-80zm75 20h58v20h-58zM550 190h150v20H550zm40-20h74v20h-74zM1340 340h240v18h-240zm40-20h120v20h-120z"/></g>
+  <path fill="#95b9aa" d="M0 630h110v-30h80v-50h80v-60h95v-60h90v45h90v70h60v30h100v65h895v360H0z"/>
+  <path fill="#a6c3ae" d="M550 640h90v-55h75v-70h75v-70h95v-80h70v-45h75v55h65v55h70v90h70v60h80v60h195v360H550z"/>
+  <path fill="#709783" d="M0 740h105v-65h85v-70h85v-60h70v45h75v45h80v65h80v70h95v55h925v175H0z"/>
+  <path fill="#86aa8d" d="M570 815h70v-50h85v-65h100v-50h70v-55h85v-60h65v50h80v65h80v35h75v65h120v50h200v250H570z"/>
+  <path fill="#5d855e" d="M0 880h180v-35h160v-20h120v-30h210v-30h160v30h210v35h170v35h180v20h210v115H0z"/>
+  <path fill="#72955c" d="M0 943h230v-25h150v-22h210v-20h235v25h220v23h195v16h360v60H0z"/>
+  <path fill="#96ad6b" d="M1120 1000H630v-28h72v-20h58v-20h48v-18h44v-18h42v-20h32v20h-21v18h-10v18h12v20h50v20h91v28h72z"/>
+  <g fill="#526f4b"><path d="M57 652h20v280H57zm139 66h16v215h-16zm1244-108h22v345h-22zm-106 127h15v201h-15z"/></g>
+  <g fill="#426549"><path d="M0 600h23v-47h38v-43h45v45h37v48h39v57h-24v56H21v-52H0zM1357 575h35v-60h37v-52h46v45h32v59h42v50h35v60h-28v52h-171v-54h-28z"/></g>
+  <g fill="#547c50"><path d="M8 550h36v-40h48v-47h40v45h28v42h32v60h-28v30H25v-35H8zM134 698h25v-37h34v-38h37v37h30v40h26v46h-22v35H151v-35h-17zM1282 737h25v-35h35v-40h34v40h29v40h28v45h-17v35h-112v-35h-22zM1410 520h31v-39h36v-38h40v42h37v35h30v42h16v53h-49v34h-131v-38h-35v-50h25z"/></g>
+  <g fill="#658a54"><path d="M38 528h44v-29h39v37h34v33H38zM1410 533h41v-30h39v32h40v32h-120zM158 697h38v-31h32v34h30v26H158z"/></g>
+  <g fill="#3d603d"><path d="M0 900h42v-25h49v26h52v29h49v70H0zM1450 920h40v-30h42v25h39v20h29v65h-150z"/></g>
+  <g fill="#c7c386"><path d="M350 932h7v7h-7zm900 20h7v7h-7zm-123-91h6v6h-6zm-620-30h6v6h-6z"/></g>
+</svg>

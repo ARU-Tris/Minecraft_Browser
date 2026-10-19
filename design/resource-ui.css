@@ -1,0 +1,165 @@
+/* Unmodified resource-pack inventory texture, displayed at its original 176:166 layout. */
+.home-site { padding:22px 18px;background:#3f5137 url('../assets/minecraft/textures/gui/title/background/panorama_0.png') center/cover; }
+.inventory-backdrop { background:#0005; }
+.inventory-brand { margin-bottom:16px; }
+.inventory-brand>span { font-size:31px; }
+.inventory-brand>small { display:none; }
+.inventory-search { width:min(var(--inventory-width,792px),100%);margin:0 auto 17px;height:38px; }
+.inventory-native.inventory-window {
+  position:relative;display:block;width:min(var(--inventory-width,792px),100%);aspect-ratio:176/166;height:auto;min-height:0;padding:0;border:0;box-shadow:none;
+  background:transparent url('../assets/minecraft/textures/gui/container/inventory.png') left top/145.454545% 154.216867% no-repeat;
+  image-rendering:pixelated;container-type:inline-size;color:#404040;
+}
+.browser-shell[data-theme=deepslate] .inventory-native.inventory-window { background-color:transparent;box-shadow:none; }
+.inventory-native .equipment-slots { position:absolute;left:3.977273%;top:4.216867%;width:10.227273%;height:43.373494%;display:grid;grid-template-rows:repeat(4,1fr);gap:0; }
+.inventory-native .player-well { position:absolute;left:14.772727%;top:4.819277%;width:29.545455%;height:42.168675%;border:0;background:none;display:block; }
+.inventory-native .player-well .player-canvas { width:100%;height:100%;object-fit:contain;display:block; }
+.inventory-native .native-crafting-label { position:absolute;top:3.012048%;left:55.113636%;margin:0;font-family:Minecraft,Galmuri;font-size:clamp(10px,4.15cqi,22px);line-height:1.25;font-weight:400; }
+.inventory-native .crafting-grid { position:absolute;left:55.113636%;top:10.240964%;width:20.454545%;height:21.686747%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:0; }
+.inventory-native .inventory-slot.native-output { position:absolute;left:86.931818%;top:16.265060%;width:10.227273%;height:10.843373%; }
+.inventory-native .native-offhand { position:absolute;left:44.318182%;top:37.349398%;width:9.090909%;height:9.638554%;background:url('../assets/minecraft/textures/gui/sprites/container/slot/shield.png') center/100% 100% no-repeat; }
+.inventory-native .inventory-section-label { display:none; }
+.inventory-native .inventory-grid { position:absolute;left:3.977273%;top:50%;width:92.045455%;height:32.530120%;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:0; }
+.inventory-native .inventory-hotbar { position:absolute;left:3.977273%;top:84.939759%;width:92.045455%;height:10.843373%;margin:0;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:0; }
+.inventory-native .inventory-slot { width:100%;height:100%;min-width:0;min-height:0;aspect-ratio:auto;padding:0;border:0;outline:0;background:none;color:#fff;box-shadow:none!important;display:flex;align-items:center;justify-content:center; }
+.inventory-native .inventory-slot img { display:block;width:88.888889%;height:88.888889%;object-fit:contain;image-rendering:pixelated;pointer-events:none;user-select:none;filter:none; }
+.inventory-native .inventory-slot:hover,.inventory-native .inventory-slot:focus-visible { background:#ffffff60;outline:0; }
+.inventory-native .inventory-hotbar>.inventory-slot:first-child { outline:none;background:none; }
+.inventory-native .equipment-slot img.empty-armor { opacity:1; }
+.inventory-native .bookmark-slot[draggable=true],.inventory-native .equipment-slot[draggable=true] { cursor:grab; }
+.inventory-native .bookmark-slot:active,.inventory-native .equipment-slot:active { cursor:grabbing; }
+.inventory-native .inventory-slot.carried { background:#b4d7866b; }
+.inventory-native .slot-drop-target { outline:2px solid #d7e6b7;outline-offset:-3px;background:#ffffff60; }
+.inventory-native .dragging-item img { opacity:.4; }
+.empty-slot-plus { display:none;font-family:Minecraft;font-size:22px;color:#eee;text-shadow:2px 2px #444;pointer-events:none; }
+.inventory-slot:hover .empty-slot-plus,.inventory-slot:focus-visible .empty-slot-plus { display:block; }
+.inventory-toolbar { display:flex;align-items:center;justify-content:center;gap:20px;width:min(528px,100%);margin:17px auto 0; }
+.inventory-toolbar p { color:#eee;font-size:10px;line-height:1.8;margin:0;text-shadow:1px 1px #222; }
+.inventory-toolbar>.minecraft-button { font-size:12px;min-width:123px; }
+
+/* Vanilla widget graphics provide the edges and hover states. */
+.minecraft-button { background:#8b8b8b;border:6px solid transparent;border-image:url('../assets/minecraft/textures/gui/sprites/widget/button.png') 3 fill stretch;box-shadow:none;color:#fff;padding:3px 8px;text-shadow:1px 2px #3f3f3f;image-rendering:pixelated;min-height:34px; }
+.minecraft-button:hover,.minecraft-button:focus-visible { background:#aaa;border-image-source:url('../assets/minecraft/textures/gui/sprites/widget/button_highlighted.png');outline:0; }
+.minecraft-button:disabled { border-image-source:url('../assets/minecraft/textures/gui/sprites/widget/button_disabled.png'); }
+.minecraft-button:active { box-shadow:none;transform:translateY(1px); }
+.sidebar { background:#c6c6c6; }
+.browser-shell[data-theme=deepslate] .sidebar { background:var(--panel); }
+.resource-dialog { position:absolute;left:0;right:0;top:17%;bottom:auto;margin:0 auto;width:min(470px,calc(100% - 30px));max-height:80vh;overflow:auto;padding:18px;background:#c6c6c6;border:3px solid #111;box-shadow:inset 3px 3px #fff,inset -3px -3px #555,5px 5px #0006;font-family:Galmuri;color:#333; }
+.resource-dialog::backdrop { background:#0009; }
+.resource-dialog .popover-heading { font-size:15px;margin-bottom:20px; }
+.settings-profile { display:flex;align-items:center;gap:16px;padding:4px 0 23px;font-size:16px; }
+.settings-profile canvas { width:44px;height:44px;image-rendering:pixelated;border:2px solid #333; }
+.settings-profile small { display:block;color:#666;font-size:10px;margin-top:9px; }
+.settings-row { width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px;font-size:12px;margin:10px 0;text-align:left;min-height:44px; }
+.settings-row>span { font-size:10px;opacity:.8; }
+.settings-row select { padding:7px;background:#8b8b8b;color:#fff;border:2px solid #373737;font-family:Galmuri;font-size:11px; }
+.settings-help { font-size:10px;line-height:1.9;margin:22px 0 0;color:#666; }
+.bookmark-dialog>form>label { display:block;font-size:12px;margin:19px 0; }
+.bookmark-dialog input { display:block;width:100%;background:#141414;color:#eee;border:2px solid #373737;border-bottom-color:#fff;border-right-color:#fff;padding:12px 11px;margin-top:9px;font-family:Galmuri;font-size:12px; }
+.bookmark-assignment { display:flex;align-items:center;gap:13px;padding:7px 0 13px;border-bottom:2px solid #999; }
+.assigned-item { display:flex;align-items:center;justify-content:center;flex-shrink:0;width:56px;height:56px;background:#8b8b8b;box-shadow:inset 2px 2px #373737,inset -2px -2px #fff; }
+.assigned-item img { width:48px;height:48px;image-rendering:pixelated;object-fit:contain; }
+.bookmark-assignment>div { min-width:0;flex:1; }
+.bookmark-assignment strong { display:block;font-family:Minecraft,Galmuri;font-size:15px;font-weight:400;line-height:1.4; }
+.bookmark-assignment small { display:block;color:#666;font-size:9px;line-height:1.8;margin-top:7px; }
+.bookmark-assignment>button { font-size:9px;flex-shrink:0;padding:4px; }
+.dialog-actions { display:flex;gap:12px;justify-content:flex-end;margin-top:25px; }
+.dialog-actions button { min-width:96px;font-size:12px; }
+.form-error { padding:10px;color:#7b2c21;background:#dcb6a8;border:1px solid #9e6452;font-size:11px;line-height:1.8; }
+.bookmark-menu.resource-dialog { position:absolute;width:210px;margin:0;right:auto;bottom:auto;top:auto;z-index:46;padding:6px;border-width:2px;box-shadow:inset 2px 2px #fff,inset -2px -2px #555,4px 4px #0005; }
+.bookmark-menu>strong { display:block;font-size:11px;font-weight:400;padding:11px 8px;color:#555;border-bottom:1px solid #999;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.bookmark-menu button { width:100%;display:block;text-align:left;border:0;background:none;font-family:Galmuri;font-size:12px;color:#333;padding:12px 9px; }
+.bookmark-menu button:hover,.bookmark-menu button:focus-visible { outline:0;background:#86869c;color:#fff;text-shadow:1px 1px #333; }
+.bookmark-menu button[data-bookmark-command=remove] { color:#974638; }
+.item-tooltip { position:absolute;z-index:45;max-width:min(340px,calc(100% - 24px));padding:11px 13px;background:#100010f5;color:#fff;border:2px solid #28005f;box-shadow:inset 0 2px #5000aa,inset 0 -2px #230044,2px 2px #000a;pointer-events:none;font-size:12px;text-shadow:1px 1px #333; }
+.item-tooltip strong { display:block;font-weight:400;font-size:14px;color:#fff;overflow-wrap:anywhere; }
+.item-tooltip span { display:block;font-family:Minecraft,Galmuri;color:#a8a8a8;font-size:13px;margin-top:7px; }
+.item-tooltip small { display:block;font-size:9px;color:#7dbaaf;margin-top:10px;line-height:1.7; }
+.inventory-notice { position:absolute;z-index:50;bottom:20px;left:50%;transform:translateX(-50%);max-width:calc(100% - 40px);padding:12px 15px;background:#171717f5;color:#fff;border:2px solid #999;box-shadow:3px 3px #0006;display:flex;align-items:center;gap:14px;font-size:11px;line-height:1.7; }
+.inventory-notice button { border:1px solid #97b76a;background:#405d2b;color:#e5f0c9;font-family:Galmuri;padding:5px 9px;white-space:nowrap; }
+.bookmark-library { display:flex;flex-direction:column;gap:5px;max-height:390px;overflow:auto;padding-top:8px; }
+.bookmark-library>div { display:flex;align-items:center;gap:8px; }
+.bookmark-library button { border:0;background:transparent;color:var(--panel-ink);font-size:10px;padding:10px 5px; }
+.bookmark-library button:first-child { display:flex;align-items:center;gap:13px;min-width:0;flex:1;text-align:left; }
+.bookmark-library button:first-child img { width:28px;height:28px;image-rendering:pixelated; }
+.bookmark-library button:first-child span { flex:1;min-width:0;font-size:12px; }
+.bookmark-library small { display:block;margin-top:6px;font-family:Minecraft,Galmuri;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#666;font-size:11px; }
+.bookmark-library button:hover { background:#9f9f9f66; }
+#reset-skin { width:100%;font-size:10px;margin-top:22px;padding:7px 4px; }
+@container (max-width:680px) {
+  .home-site { padding:22px 16px; }
+  .inventory-native.inventory-window { padding:0; }
+  .inventory-native .equipment-slots { width:10.227273%; }
+  .inventory-native .player-well .player-canvas { height:100%; }
+  .inventory-native .crafting-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .inventory-native .inventory-slot { padding:0; }
+  .inventory-toolbar { gap:13px; }
+  .inventory-toolbar p { font-size:9px; }
+}
+@container (max-width:440px) {
+  .home-site { padding:24px 10px; }
+  .inventory-native.inventory-window { padding:0; }
+  .inventory-native .equipment-slots { width:10.227273%; }
+  .inventory-native .player-well .player-canvas { height:100%; }
+  .inventory-native .crafting-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .inventory-native .inventory-slot { padding:0; }
+  .inventory-toolbar { flex-wrap:wrap;gap:11px;margin-top:15px; }
+  .inventory-toolbar p { text-align:center;font-size:8px; }
+}
+@media(max-width:600px) {
+  .resource-dialog { top:10%;padding:15px; }
+  .bookmark-assignment { flex-wrap:wrap; }
+  .bookmark-assignment>button { margin-left:auto; }
+  .settings-row { flex-wrap:wrap;font-size:11px; }
+  .settings-row>span { font-size:9px; }
+  .inventory-notice { flex-wrap:wrap;justify-content:center;font-size:9px;width:max-content; }
+}
+
+/* Creative inventory: the pack's 195 x 136 panel and the game's category tabs. */
+.creative-dialog.resource-dialog { width:min(585px,calc(100% - 28px));top:9%;max-height:88vh;padding:0;border:0;box-shadow:none;background:transparent;overflow:visible; }
+.creative-dialog::backdrop { background:#000b; }
+.creative-heading { display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0 3px 13px;color:#fff;font-size:14px;text-shadow:2px 2px #222; }
+.creative-heading .icon-btn { color:#eee;background:#2229; }
+.creative-workbench { position:relative;width:100%;container-type:inline-size;image-rendering:pixelated; }
+.creative-tabs { display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0;height:14.358974cqi;align-items:end; }
+.creative-tabs button { position:relative;display:flex;align-items:center;justify-content:center;height:94%;width:100%;padding:0 0 6%;border:0;background:transparent url('../assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_unselected_2.png') center/100% 100% no-repeat;color:#fff;image-rendering:pixelated;cursor:pointer; }
+.creative-tabs button[aria-selected=true] { height:100%;background-image:url('../assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_selected_2.png');z-index:1; }
+.creative-tabs button:hover img { filter:brightness(1.15); }
+.creative-tabs button:focus-visible { outline:2px solid #fff;outline-offset:-7px; }
+.creative-tabs img { width:57.142857%;height:auto;max-height:70%;object-fit:contain;image-rendering:pixelated;pointer-events:none; }
+.creative-panel { position:relative;width:100%;aspect-ratio:195/136;background:transparent url('../assets/minecraft/textures/gui/container/creative_inventory/tab_item_search.png') left top/131.282051% 188.235294% no-repeat; }
+.creative-search-label { position:absolute;left:4.102564%;top:3.676471%;font-size:3.4cqi;line-height:1.2;color:#404040; }
+#icon-search { position:absolute;left:41.025641%;top:2.941176%;width:46.153846%;height:8.823529%;min-width:0;padding:0 1.4%;margin:0;border:0;outline:none;background:transparent;color:#fff;font-family:Minecraft,Galmuri;font-size:3.15cqi;line-height:1;box-shadow:none; }
+#icon-search::placeholder { color:#ddd;opacity:.8; }
+#icon-search::-webkit-search-cancel-button { display:none; }
+.creative-grid { position:absolute;left:4.102564%;top:12.5%;width:83.076923%;height:66.176471%;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));grid-template-rows:repeat(5,minmax(0,1fr));gap:0;overscroll-behavior:contain; }
+.creative-slot { display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;width:100%;height:100%;padding:0;margin:0;border:0;outline:0;background:transparent;cursor:pointer;box-shadow:none; }
+.creative-slot img { width:88.888889%;height:88.888889%;object-fit:contain;image-rendering:pixelated;pointer-events:none;user-select:none; }
+.creative-slot:hover,.creative-slot:focus-visible { background:#ffffff80; }
+.creative-slot.selected { box-shadow:inset 0 0 0 2px #e9ebae; }
+.creative-slot:disabled { cursor:default;background:#0002; }
+.creative-slot:disabled img { opacity:.35;filter:grayscale(.7); }
+.creative-scroll { position:absolute;left:89.74359%;top:12.5%;width:6.153846%;height:80.882353%;padding:0;margin:0;border:0;outline:0;background:transparent;writing-mode:vertical-lr;direction:ltr;appearance:none;-webkit-appearance:none;cursor:ns-resize; }
+.creative-scroll::-webkit-slider-runnable-track { background:transparent;width:100%; }
+.creative-scroll::-webkit-slider-thumb { appearance:none;-webkit-appearance:none;width:clamp(18px,calc((100vw - 28px) * .06153846),36px);height:clamp(22.5px,calc((100vw - 28px) * .07692308),45px);border:0;border-radius:0;background:url('../assets/minecraft/textures/gui/sprites/container/creative_inventory/scroller.png') center/100% 100%;image-rendering:pixelated; }
+.creative-scroll:disabled { opacity:.45;cursor:default; }
+.creative-scroll:focus-visible { outline:2px solid #fff;outline-offset:-2px; }
+.creative-hotbar { position:absolute;left:4.102564%;top:81.617647%;width:83.076923%;height:13.235294%;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));pointer-events:none; }
+.creative-hotbar>span { display:flex;align-items:center;justify-content:center; }
+.creative-hotbar img { width:88.888889%;height:88.888889%;object-fit:contain;image-rendering:pixelated; }
+.creative-empty { position:absolute;left:7%;top:38%;width:78%;text-align:center;font-size:3cqi;line-height:1.7;color:#eee;text-shadow:1px 1px #444;pointer-events:none; }
+.creative-tooltip { position:absolute;z-index:3;width:max-content;max-width:95%;padding:10px 12px;background:#100010f5;border:2px solid #28005f;box-shadow:inset 0 2px #5000aa,inset 0 -2px #230044,2px 2px #000a;color:#fff;pointer-events:none;text-shadow:1px 1px #333;font-size:13px;line-height:1.5; }
+.creative-tooltip strong { display:block;font-weight:400; }
+.creative-tooltip span { display:block;font-family:Minecraft,Galmuri;color:#aaa;font-size:12px;margin-top:4px; }
+.creative-footer { display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 3px 0;color:#ddd;font-size:10px;text-shadow:1px 1px #222; }
+.creative-footer>div { display:flex;align-items:center;gap:12px;min-width:0; }
+.creative-footer img { width:40px;height:40px;object-fit:contain;image-rendering:pixelated; }
+.creative-footer strong { display:block;font-family:Minecraft,Galmuri;color:#fff;font-size:15px;font-weight:400;line-height:1.3;margin-top:5px; }
+.creative-footer button { min-width:96px;font-size:12px; }
+.creative-help { display:flex;align-items:flex-start;justify-content:space-between;gap:16px;color:#bbb;margin:13px 3px 0;font-size:9px;text-shadow:1px 1px #111;line-height:1.8; }
+@media(max-width:600px) {
+  .creative-dialog.resource-dialog { top:7%;padding:0; }
+  .creative-heading { font-size:12px; }
+  .creative-footer { padding-top:10px; }
+  .creative-help { flex-wrap:wrap;gap:4px; }
+}

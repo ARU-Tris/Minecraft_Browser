@@ -1,0 +1,55 @@
+/* Keep game art in its own layers: fading the world never fades the inventory. */
+.home-site { isolation:isolate; }
+.world-backdrop { position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none;background:#152019; }
+.world-layer { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;filter:blur(3px);transform:scale(1.025);transition:opacity 4s ease-in-out; }
+.world-layer.is-visible { opacity:1; }
+.inventory-backdrop { background:#0003; }
+.inventory-toolbar p { text-align:center; }
+.music-player { margin:0 0 12px;padding:10px;background:var(--slot);border:2px solid var(--line);box-shadow:inset 2px 2px var(--panel-dark),inset -2px -2px var(--panel-light);color:var(--panel-ink); }
+.music-world { display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:Minecraft,Galmuri;font-size:11px;line-height:1.2;color:var(--dim-ink); }
+.music-world time { font-variant-numeric:tabular-nums; }
+.music-track { display:flex;align-items:center;gap:8px;margin:9px 0 8px; }
+.music-track>img { width:29px;height:29px;image-rendering:pixelated;flex-shrink:0; }
+.music-track>div { flex:1;min-width:0; }
+.music-track strong { display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:Minecraft,Galmuri;font-size:14px;line-height:1.15;font-weight:400; }
+.music-track small { display:block;font-size:8px;line-height:1.4;color:var(--dim-ink);margin-top:4px; }
+.music-controls { display:flex;align-items:center;gap:5px; }
+.music-controls button { width:29px;height:25px;padding:3px;border:2px solid var(--line);background:var(--panel);color:var(--panel-ink);box-shadow:inset 1px 1px var(--panel-light),inset -1px -1px var(--panel-dark);display:grid;place-items:center;flex-shrink:0; }
+.music-controls button:hover,.music-controls button:focus-visible { background:var(--active);color:var(--active-ink);outline:1px solid var(--panel-light); }
+.music-controls button svg { width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2; }
+.music-controls button span { font-family:monospace;font-size:12px; }
+.music-controls input { min-width:0;width:100%;margin:0 0 0 4px;accent-color:var(--green);height:20px; }
+.sidebar .section-caption { margin-top:8px;margin-bottom:5px; }
+.sidebar .tab-list { flex-shrink:1;min-height:112px;max-height:150px; }
+.sidebar .tab-item { min-height:34px; }
+.sidebar .tab-select { padding-top:5px;padding-bottom:5px; }
+.sidebar .sidebar-brand { margin-bottom:8px; }
+.sidebar .sidebar-workspace { margin-bottom:8px; }
+.sidebar .sidebar-navigation { margin-bottom:6px; }
+.sidebar .storage-row { min-height:28px;padding-top:5px;padding-bottom:5px; }
+.sidebar .new-tab { min-height:30px;margin-top:5px; }
+.sidebar .split-toggle { min-height:34px;margin-top:6px; }
+.sidebar .sidebar-footer { margin-top:7px;margin-bottom:10px; }
+.sidebar .sidebar-rule { margin-top:10px; }
+.sidebar .sidebar-bottom { padding-top:12px; }
+.settings-section-title { margin:24px 0 8px;padding-bottom:9px;border-bottom:2px solid #999;font-family:Minecraft,Galmuri;font-size:17px;font-weight:400; }
+.settings-row.sound-row { margin:5px 0;padding:7px 0; }
+.sound-row input[type=checkbox] { width:18px;height:18px;accent-color:#507638; }
+.sound-row input[type=range] { width:140px;max-width:45%;accent-color:#507638; }
+.sound-row output { min-width:35px;text-align:right;font-family:Minecraft,Galmuri;font-size:14px; }
+.sound-controls { display:flex;gap:10px; }
+.sound-controls button { font-size:11px;flex:1; }
+.news-status { font-size:10px;line-height:1.8;color:#555; }
+.ambience-error { color:#8a3622;font-size:10px;line-height:1.8; }
+.settings-dialog.resource-dialog { top:7%;max-height:86vh; }
+.advancement-toast { position:absolute;z-index:38;top:12px;right:12px;width:min(320px,calc(100% - 24px));height:64px;background:url('../assets/ambience/gui/advancement.png') center/100% 100% no-repeat;image-rendering:pixelated;transform:translateX(calc(100% + 20px));transition:transform .6s cubic-bezier(.55,0,1,.45);filter:drop-shadow(3px 4px 0 #0005); }
+.advancement-toast.is-visible { transform:translateX(0); }
+.advancement-toast>a { display:flex;align-items:center;gap:12px;width:100%;height:100%;padding:8px 24px 8px 12px;text-decoration:none;color:#fff; }
+.advancement-toast>a>img { width:32px;height:32px;image-rendering:pixelated;flex-shrink:0; }
+.advancement-toast>a>span { display:block;min-width:0;font-family:Minecraft,Galmuri;font-size:14px;line-height:1.2;text-shadow:2px 2px #111; }
+.advancement-toast strong { display:block;color:#ffff55;font-weight:400;margin-bottom:4px;font-size:16px; }
+#news-toast-title { display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13px; }
+#dismiss-news { position:absolute;right:8px;top:7px;padding:0 2px;border:0;background:transparent;color:#999;font-size:14px;line-height:1; }
+#dismiss-news:hover { color:#fff; }
+.review-options { flex-wrap:wrap; }
+@media(prefers-reduced-motion:reduce) { .world-layer,.advancement-toast { transition-duration:.01ms; } }

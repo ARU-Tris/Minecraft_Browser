@@ -1,0 +1,13 @@
+{
+  "path": "assets/resource-base.json",
+  "sha256": "f36c23faf6381a9c7d284a1a461366b96a1960a1531ef64538a730ebd6b028e9",
+  "source": "C:\\Users\\Home\\AppData\\Roaming\\.minecraft\\versions\\26.2\\26.2.jar",
+  "sourceSha256": "40896ee9f1e2bec3c934daac7e93d41e9e3d9c2f8ae0ca366d52ffbfd1afa290",
+  "version": "26.2",
+  "format": [
+    88,
+    0
+  ],
+  "models": 777,
+  "scope": "Public client item/model JSON and existing project asset bindings. No game account/settings/save/mod files read or modified."
+}

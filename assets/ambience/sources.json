@@ -1,0 +1,501 @@
+[
+  {
+    "path": "assets/ambience/backgrounds/cave-1.17-0.png",
+    "sha256": "a82594e45074da9e644298930de93c868894907a6324cd7cfb974aae97525b3b",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "1.17",
+    "entry": "minecraft/textures/gui/title/background/panorama_0.png",
+    "sha1": "81b7228275ad580fd0a47ab4e51061f330df0bd4"
+  },
+  {
+    "path": "assets/ambience/backgrounds/cave-1.17-1.png",
+    "sha256": "60bd29a0e4a4107b678ea654a208c0846381e0f9e8d1f073c776e12a0b61efe5",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "1.17",
+    "entry": "minecraft/textures/gui/title/background/panorama_1.png",
+    "sha1": "4b7e517611dc9a5180201466046c2fe0d1216d00"
+  },
+  {
+    "path": "assets/ambience/backgrounds/cave-1.17-2.png",
+    "sha256": "a8ac0c9ab3f5c25325dd24da5637db6f38a45a50014a5dd768a5576491ed3ea5",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "1.17",
+    "entry": "minecraft/textures/gui/title/background/panorama_2.png",
+    "sha1": "f4e61ad8551dad48c505b8258841d87ec7df75f5"
+  },
+  {
+    "path": "assets/ambience/backgrounds/day-1.19-0.png",
+    "sha256": "a94219c00a2391fc222fd7574fc88dabb0281fb6bcd27e9170e692b638ef623b",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "1.19",
+    "entry": "minecraft/textures/gui/title/background/panorama_0.png",
+    "sha1": "e956e0986b597ec1b7d1db720dc8aec3a0642630"
+  },
+  {
+    "path": "assets/ambience/backgrounds/day-26-0.png",
+    "sha256": "da38d3c6ce0d784510f4b76cdb785aea0ffdefbe7bc1d0517f0120d8289d297c",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "26",
+    "entry": "minecraft/textures/gui/title/background/panorama_0.png",
+    "sha1": "e3e856304400d0c4da3e41cf4954491e0c337e03"
+  },
+  {
+    "path": "assets/ambience/backgrounds/day-27-0.png",
+    "sha256": "27a4ff3432dd3705a2e50654a8792cac7bfb661e732ea6a9fd0181b9240eb1b3",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "27",
+    "entry": "minecraft/textures/gui/title/background/panorama_0.png",
+    "sha1": "0345cc0f9d4e5ddaf1b1c091c8785b28365d094f"
+  },
+  {
+    "path": "assets/ambience/backgrounds/day-30-0.png",
+    "sha256": "7b1373783a46dde953a640d8d4dfc33d02a9e370d3242299f64a27a2bef0e6d9",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "30",
+    "entry": "minecraft/textures/gui/title/background/panorama_0.png",
+    "sha1": "4a8493454b4307e330501892058541ed0bf228da"
+  },
+  {
+    "path": "assets/ambience/backgrounds/sunset-1.18-0.png",
+    "sha256": "8cff557cadc3be7708863fc559be69d31fe1ff3cddfe101704f1329d9f343c20",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "1.18",
+    "entry": "minecraft/textures/gui/title/background/panorama_0.png",
+    "sha1": "166d2109d4ba5a5c713fa31df0f07018220449a8"
+  },
+  {
+    "path": "assets/ambience/backgrounds/sunset-1.20-0.png",
+    "sha256": "9ee6a674ba896e06e1c9e67737e25a7ad77ab30a136e3598c661f43464966ca8",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "1.20",
+    "entry": "minecraft/textures/gui/title/background/panorama_0.png",
+    "sha1": "f228a4964175f885b334033c5e5cf12bf62421d0"
+  },
+  {
+    "path": "assets/ambience/backgrounds/day-village.png",
+    "sha256": "7007513cb660582cef505ce747bbc652be6702fc2f82b67f84e5c4464240f04c",
+    "source": "VanillaTweaks_r106307_MC26.3.x.zip",
+    "entry": "assets/minecraft/textures/gui/title/background/panorama_0.png"
+  },
+  {
+    "path": "assets/ambience/backgrounds/night-forest.jpg",
+    "sha256": "b781999e35864f365a871b524eb6f9ca066a05efadc4cced282e5eda869f8592",
+    "source": "Official Minecraft screenshot",
+    "url": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/survivenight_header.jpg",
+    "article": "https://www.minecraft.net/en-us/article/how-survive-your-first-night-minecraft"
+  },
+  {
+    "path": "assets/ambience/music/ancestry.ogg",
+    "sha256": "c69011c3990c5708e5ede20b36454a467d67f457c1e02031da5d58762cdc3946",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/ancestry.ogg",
+    "sha1": "829c044d2c7189d938efb8cb89d1bb66b77c67da"
+  },
+  {
+    "path": "assets/ambience/music/clark.ogg",
+    "sha256": "ae021dbe9039aa08bfdbe86f33826c28b03fb2f1abce8761d2c3527817c883af",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/clark.ogg",
+    "sha1": "bbb301a6ed65e5e92eb97b601b9ea9979324bccf"
+  },
+  {
+    "path": "assets/ambience/music/danny.ogg",
+    "sha256": "6cec76347bde8a8c0d74a8da2566e8fad2f87f12c14acb94e7255a9bf7111a76",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/danny.ogg",
+    "sha1": "603fd41ebe3eac0795ebfa0b31195be1866d1e9c"
+  },
+  {
+    "path": "assets/ambience/music/deeper.ogg",
+    "sha256": "68cc3b88e479e58f1babf811d5eaf86ea42c4a756f991083270fc9c0c2b2063c",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/deeper.ogg",
+    "sha1": "8e901a9a5e4daee7e3cbff8a3529d0a4148f8406"
+  },
+  {
+    "path": "assets/ambience/music/dry_hands.ogg",
+    "sha256": "484346d89f2a08f28e51b4ad977ed6dfe132ae6ed6d41d93e0b4d18a8bb18bbc",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/dry_hands.ogg",
+    "sha1": "53976ed366c97ad86c1d7ce21497c9985f33d4f1"
+  },
+  {
+    "path": "assets/ambience/music/echo_in_the_wind.ogg",
+    "sha256": "15dc56b32c89005434a4bf4e8e72dee825ea7124cbd19d8c896ea1ebc8816d4e",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/echo_in_the_wind.ogg",
+    "sha1": "5c97ac9788ab81e560bae32b0f5e4fc244e544b4"
+  },
+  {
+    "path": "assets/ambience/music/floating_dream.ogg",
+    "sha256": "beb12b0abb511690c0454be5454481f5ac19c7d37c1dd5ed07298015ed0ba6f7",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/floating_dream.ogg",
+    "sha1": "dec42f5a10b6a0018594bdb868882ddccf04f52e"
+  },
+  {
+    "path": "assets/ambience/music/haggstrom.ogg",
+    "sha256": "3126d3c381a53e078c0ac597c80645d31b7d1d9fdb7851808334f5c333b3d5e2",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/haggstrom.ogg",
+    "sha1": "c25705e16f1d51a56a2b0a4604250b3844ceadcf"
+  },
+  {
+    "path": "assets/ambience/music/infinite_amethyst.ogg",
+    "sha256": "b8b31547f4b0f01879e0c3f2be894ec4c3644aab944feaefdac7e3e5b86e0f50",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/infinite_amethyst.ogg",
+    "sha1": "f6dd3e263823fbc2051f441e5b12a02b2258ae84"
+  },
+  {
+    "path": "assets/ambience/music/key.ogg",
+    "sha256": "f1e12d434b6836ab53ba86173bb0519da62d6ffb7eb4243a779ddf50444c1673",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/key.ogg",
+    "sha1": "8ee9d608f0bbb2d0513af7bfc1b55e591ada05ea"
+  },
+  {
+    "path": "assets/ambience/music/living_mice.ogg",
+    "sha256": "c093b8a931aafd6b41822e664ee1024f62e8d7336b09d74fea91ceb6b2d4ecf4",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/living_mice.ogg",
+    "sha1": "532fdae2fd43bc046f78a1b7b79f28161f25fc4c"
+  },
+  {
+    "path": "assets/ambience/music/mice_on_venus.ogg",
+    "sha256": "f051c7ddcb602b15669197392d70c65bc0a36f52e49da7ee80a189f080c4f348",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/mice_on_venus.ogg",
+    "sha1": "06a2f38a094573652977232abcc4f268cf6745ad"
+  },
+  {
+    "path": "assets/ambience/music/minecraft.ogg",
+    "sha256": "6fd495666af581b3aa76a9569fa8f2b55d7876ac51d60d4eabd436d72f8da985",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/minecraft.ogg",
+    "sha1": "7f7777e5d5b163c5d64201fd53e5682599548a49"
+  },
+  {
+    "path": "assets/ambience/music/oxygene.ogg",
+    "sha256": "13c26dd754e58404b0a595e6075e58565e2d8e7e5dd7206f8cf440165d14ac70",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/oxygene.ogg",
+    "sha1": "b99889832d7f9abe35725506e4cd48075e25f957"
+  },
+  {
+    "path": "assets/ambience/music/subwoofer_lullaby.ogg",
+    "sha256": "0a2c7f684cbc65d5f1416e9044e5838b5b113dda61e07556fc6ca9b438a7d5cc",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/subwoofer_lullaby.ogg",
+    "sha1": "0dbcd56e6d8a931818f0913a0e23f784106d4ad8"
+  },
+  {
+    "path": "assets/ambience/music/sweden.ogg",
+    "sha256": "f5169a831c71ecf5079cc74ba0283b95c068c3324b976e39037faecc7f51cb04",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/sweden.ogg",
+    "sha1": "be9b14926936c4509f7fe5002cdfbba3b2752d82"
+  },
+  {
+    "path": "assets/ambience/music/wet_hands.ogg",
+    "sha256": "c7b4199793701b71330f11eda2d4dc192a9edd86e4911fd2bdcd2269fdd024b8",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/music/game/wet_hands.ogg",
+    "sha1": "e8a73969b515a15df138a4d55b07f4ff573db25f"
+  },
+  {
+    "path": "assets/ambience/sounds/click.ogg",
+    "sha256": "91bc25153ad4a697335477f5ebeb9515e83fdbcafd16b1e45fb63de514391d9f",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/random/click_stereo.ogg",
+    "sha1": "f0ca66561f832bf2f60b393837297c2692367cd5"
+  },
+  {
+    "path": "assets/ambience/sounds/toastIn.ogg",
+    "sha256": "71fcf933a29e83940c2b896585b1c9de846d4b5fb3e934b7ef642bd11733b884",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ui/toast/in.ogg",
+    "sha1": "506f2fdb1b7530df66134aa04c71e66513df0c93"
+  },
+  {
+    "path": "assets/ambience/sounds/toastOut.ogg",
+    "sha256": "78f870f75914fd6784b9cf6862887369a7e8604bd04eb4944562196bc3cdcaa1",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ui/toast/out.ogg",
+    "sha1": "984a7d9501fd7d679c1c91af756ca8633beb09b6"
+  },
+  {
+    "path": "assets/ambience/sounds/challenge.ogg",
+    "sha256": "058d3659ad630d5f07cebc989631ce5bf8568150fa46d07cdbc2fee7a6e1f989",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ui/toast/challenge_complete.ogg",
+    "sha1": "bd01dff39a7bd1e0e7f6847f7aee981f157e4f94"
+  },
+  {
+    "path": "assets/ambience/sounds/equip_generic.ogg",
+    "sha256": "4fac89f08fb479c9ded39441b4b476ec8ead8691f0ab8380b007f9a3c0a3a14d",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/item/armor/equip_generic1.ogg",
+    "sha1": "2571600f0f6a7e6ca98587bea590952e5a5c6670"
+  },
+  {
+    "path": "assets/ambience/sounds/equip_leather.ogg",
+    "sha256": "25317f85fdb4957af62f238a96e54d7efa65a65a591f4731f44531793e39999f",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/item/armor/equip_leather1.ogg",
+    "sha1": "190fc3c07ce94bbb446911d1de5e71826e427162"
+  },
+  {
+    "path": "assets/ambience/sounds/equip_iron.ogg",
+    "sha256": "d4762588fa3cce8bc20986ca5f732318835c1df1cbe6014fd3a44bdb22637542",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/item/armor/equip_iron1.ogg",
+    "sha1": "c5feca44b10c0afe361f2bb6b5715d71aacc0422"
+  },
+  {
+    "path": "assets/ambience/sounds/equip_gold.ogg",
+    "sha256": "0b9b832de6ce35350fcf998e50febda6f6e2b1f9e24773a18cd6d83d1bebf4f2",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/item/armor/equip_gold1.ogg",
+    "sha1": "d549abd369ef84357e4d29873f70b0a2448c9c21"
+  },
+  {
+    "path": "assets/ambience/sounds/equip_diamond.ogg",
+    "sha256": "2fc26dcc89bc5fc77c5fa247fed47e533879a4e5917212a2b177aac5ca569e25",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/item/armor/equip_diamond1.ogg",
+    "sha1": "5280bbe1c5d5ddabd622b4458c3aa31c4616a3da"
+  },
+  {
+    "path": "assets/ambience/sounds/equip_netherite.ogg",
+    "sha256": "6cff85521b1006df84d2a05d11b2e91893c8ce4ac15ff150fc3a250e68b2de99",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/item/armor/equip_netherite1.ogg",
+    "sha1": "a3ed04daf5a6a405fa3964b37ceda19b43a8c777"
+  },
+  {
+    "path": "assets/ambience/sounds/equip_copper.ogg",
+    "sha256": "1964a992057103a24d1ab3f7aace3cac2032d3caefc522420fb5792d109a2f35",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/item/armor/equip_copper1.ogg",
+    "sha1": "c52b2abc32f6f203bad20ccd1df41ea93dc019e6"
+  },
+  {
+    "path": "assets/ambience/sounds/cave1.ogg",
+    "sha256": "086721797a2ddcf6ba4b75cb9787a5340f10a5f73190f1310e4d80b3c7d29fb7",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave1.ogg",
+    "sha1": "1058cf72714c48b154e7883cb9d7ec918e0816b3"
+  },
+  {
+    "path": "assets/ambience/sounds/cave2.ogg",
+    "sha256": "18f5b3001d55b17e767c0b0a13dee62240187d4960ae8c5eef1bea73d1df392a",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave2.ogg",
+    "sha1": "a4fe07709e6dc99cdb378ce151f2547fb532469f"
+  },
+  {
+    "path": "assets/ambience/sounds/cave3.ogg",
+    "sha256": "dd96613af2ea1a58f6bfbe8c2f76c3bece7d7363dd5aeb57af6805546885d478",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave3.ogg",
+    "sha1": "04b8da035ef067f8ba1946692ff9fd261c186c4f"
+  },
+  {
+    "path": "assets/ambience/sounds/cave4.ogg",
+    "sha256": "c667f11f5b8a2c901fb219544e021ee69fc3b0b894cb73a8a55aa5b063df9179",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave4.ogg",
+    "sha1": "67863b6f569dc03626d407a811057825c2d45de9"
+  },
+  {
+    "path": "assets/ambience/sounds/cave5.ogg",
+    "sha256": "28fdeb79f5f1167031b56b9ce2057ab9221e4d31fb36c2d904051c5a0c22a85c",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave5.ogg",
+    "sha1": "01b9a0d2165d5d0efd9a4e16d311d9b98d71f140"
+  },
+  {
+    "path": "assets/ambience/sounds/cave6.ogg",
+    "sha256": "5f44293d146b2d017e218be222f2ca3d208c7326cacbbc1bac146147229468d5",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave6.ogg",
+    "sha1": "f2384d4c466cc6132d69d97a4d2b341e1db7578a"
+  },
+  {
+    "path": "assets/ambience/sounds/cave7.ogg",
+    "sha256": "35a908dc807f457c7355a2d4fa505b6ed3e0e3a0b4a0af5c8dbe954cd33c1bcb",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave7.ogg",
+    "sha1": "790a8a054d6fbc2440fdd0d5f153baa9d817756b"
+  },
+  {
+    "path": "assets/ambience/sounds/cave8.ogg",
+    "sha256": "c3ea580bb6d897c9ed6e741c13794a649adf5a13218365e80e2f52a13c467626",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave8.ogg",
+    "sha1": "104c4934605aef073d3ba87e89ba334de47fd03a"
+  },
+  {
+    "path": "assets/ambience/sounds/cave9.ogg",
+    "sha256": "f189ae712700029de89f0463a15659547b36552c7878d00b18a7312f935ed8d1",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave9.ogg",
+    "sha1": "a8cecb35ebf4dbbc83a496e30d81e0f72a85638c"
+  },
+  {
+    "path": "assets/ambience/sounds/cave10.ogg",
+    "sha256": "ca537ff2e410b2dada414daf773897ea901f1d09ba33371ca8f4a0e2d6292855",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave10.ogg",
+    "sha1": "698f16bcea825ec873cb38be0ba191b177654e62"
+  },
+  {
+    "path": "assets/ambience/sounds/cave11.ogg",
+    "sha256": "bbf911dbe638faf9f3575fda5899380fc03aec2e861f31382e795786299b41ab",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave11.ogg",
+    "sha1": "6f3ae50c05462ad0bb05dc33ab86ab5363cbd22a"
+  },
+  {
+    "path": "assets/ambience/sounds/cave12.ogg",
+    "sha256": "0765a53612d1f63152681752fa377a83dabb4d0317be610445b2afff3505e46d",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave12.ogg",
+    "sha1": "372cb0fcc25ddedffd2e96d61d4d96b0d09d2d7a"
+  },
+  {
+    "path": "assets/ambience/sounds/cave13.ogg",
+    "sha256": "d322af20706133b52baaa9778b9a53292cea145836206ce32fd1f42051c8cbe0",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave13.ogg",
+    "sha1": "7621463230ca87557d2ced0a97caa823dbe6ef7e"
+  },
+  {
+    "path": "assets/ambience/sounds/cave14.ogg",
+    "sha256": "01ac94ef2ab9d5767aac53bab442e4618ca23820cc151ad1b9699663003ba5a0",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave14.ogg",
+    "sha1": "d777d74530cde62ef1d15fe407a5be15d713f465"
+  },
+  {
+    "path": "assets/ambience/sounds/cave15.ogg",
+    "sha256": "0a5872006d1cd73efc223561f7a6a044ada070647392a8204f6340a3c7781757",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave15.ogg",
+    "sha1": "27cce57244b212b662e1cf94054e2c216bcf804f"
+  },
+  {
+    "path": "assets/ambience/sounds/cave16.ogg",
+    "sha256": "b394585a2f83dbde23fdbdad76843906ff8d61b8c086692184df118f604b0630",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave16.ogg",
+    "sha1": "3c760ef797c1dd3036c5cf7a51de04a2fdbc238d"
+  },
+  {
+    "path": "assets/ambience/sounds/cave17.ogg",
+    "sha256": "60588f178668844945c25cffcf3a33938fc028a93fd653abb70504120918377a",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave17.ogg",
+    "sha1": "2eba27e201b8676c80dc6a9f1f7a44e6efddcc4f"
+  },
+  {
+    "path": "assets/ambience/sounds/cave18.ogg",
+    "sha256": "c614f7112ec3155b8b8139e3582c0480cf9a49d906f2b9cd9c2bfd60d0a78ac7",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave18.ogg",
+    "sha1": "4e540903246cbd7140d2125e032de2ec44aa9119"
+  },
+  {
+    "path": "assets/ambience/sounds/cave19.ogg",
+    "sha256": "3918c39e2510936761cc5f3e983e7f6bf98fea67c9029b311868d1ebb15a43e6",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave19.ogg",
+    "sha1": "6277de504c0994f6a6b8deee42c03188fd8facc9"
+  },
+  {
+    "path": "assets/ambience/sounds/cave20.ogg",
+    "sha256": "064e0622d54070fefe0dd13a35a240f1057f1ff08e02b461a22e3a945850ec4b",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave20.ogg",
+    "sha1": "19b9832c81480d973f27099f7cb94a84747b8f5e"
+  },
+  {
+    "path": "assets/ambience/sounds/cave21.ogg",
+    "sha256": "bcb9551b28541070f3eac94d977331c9342c48d1382937a608b7b23518960b68",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave21.ogg",
+    "sha1": "9c2eb9846a9d8a3aa291abe6db3cfab01a0464d1"
+  },
+  {
+    "path": "assets/ambience/sounds/cave22.ogg",
+    "sha256": "f6cfbc03ede3a7c44fd3d2d1f0f4b6d1822edd74334b95275f3ee529410975fc",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave22.ogg",
+    "sha1": "38bc4945e4b02b6da45ccb90e8a58dc723dd6227"
+  },
+  {
+    "path": "assets/ambience/sounds/cave23.ogg",
+    "sha256": "068eb390de1c23be4bb819dc8fffe628a0a3939a8c8e904a3b1b89f909142fdc",
+    "source": "Installed Minecraft asset",
+    "assetIndex": "32",
+    "entry": "minecraft/sounds/ambient/cave/cave23.ogg",
+    "sha1": "400706feb11661858c9cd229117cbbd4f6279d4d"
+  },
+  {
+    "path": "assets/ambience/gui/advancement.png",
+    "sha256": "15a959d338d8ce98c1381f95d34f7143377669bcadae1198900bea88144d6634",
+    "source": "Minecraft 26.2 client",
+    "entry": "assets/minecraft/textures/gui/sprites/toast/advancement.png"
+  }
+]

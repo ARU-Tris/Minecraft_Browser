@@ -1,0 +1,48 @@
+.browser-shell .inventory-native.inventory-window { background-image:var(--pack-inventory,url('../assets/minecraft/textures/gui/container/inventory.png')); }
+.inventory-native .native-offhand { background-image:var(--pack-shield-slot,url('../assets/minecraft/textures/gui/sprites/container/slot/shield.png')); }
+.minecraft-button { border-image-source:var(--pack-button,url('../assets/minecraft/textures/gui/sprites/widget/button.png'));border-image-slice:var(--pack-button-slice,3) fill; }
+.minecraft-button:hover,.minecraft-button:focus-visible { border-image-source:var(--pack-button-hover,var(--pack-button,url('../assets/minecraft/textures/gui/sprites/widget/button_highlighted.png')));border-image-slice:var(--pack-button-hover-slice,var(--pack-button-slice,3)) fill; }
+.minecraft-button:disabled { border-image-source:var(--pack-button-disabled,var(--pack-button,url('../assets/minecraft/textures/gui/sprites/widget/button_disabled.png')));border-image-slice:var(--pack-button-disabled-slice,var(--pack-button-slice,3)) fill; }
+.creative-tabs button { background-image:var(--pack-creative-tab,url('../assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_unselected_2.png')); }
+.creative-tabs button[aria-selected=true] { background-image:var(--pack-creative-tab-selected,url('../assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_selected_2.png')); }
+.creative-panel { background-image:var(--pack-creative-search,url('../assets/minecraft/textures/gui/container/creative_inventory/tab_item_search.png')); }
+.creative-scroll::-webkit-slider-thumb { background-image:var(--pack-creative-scroller,url('../assets/minecraft/textures/gui/sprites/container/creative_inventory/scroller.png')); }
+.item-enchantment::before,.item-enchantment::after { background-image:var(--pack-glint,url('../assets/notifications/enchanted_glint_item.png')); }
+.advancement-toast { background-image:var(--pack-advancement,url('../assets/ambience/gui/advancement.png')); }
+.browser-shell[data-pack-buttons=true] :is(.sidebar-navigation .icon-btn,.sidebar .new-tab,.sidebar .split-toggle) { border:3px solid transparent;border-image:var(--pack-button) var(--pack-button-slice,3) fill stretch;box-shadow:none;color:#fff;text-shadow:1px 1px #222; }
+.browser-shell[data-pack-buttons=true] :is(.sidebar-navigation .icon-btn,.sidebar .new-tab,.sidebar .split-toggle):hover { border-image-source:var(--pack-button-hover,var(--pack-button));border-image-slice:var(--pack-button-hover-slice,var(--pack-button-slice,3)) fill; }
+#resource-pack-summary { display:block;max-width:56%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.resource-dialog.resource-packs-dialog { width:min(940px,calc(100% - 28px));top:6%;max-height:88vh;padding:20px; }
+.pack-heading { display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px; }
+.pack-heading h2 { font-family:Minecraft,Galmuri;font-size:24px;font-weight:400;margin:0; }
+.pack-intro { font-size:11px;line-height:1.8;color:#4d4d4d;margin:0 0 16px; }
+.pack-columns { display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px; }
+.pack-column { min-width:0;display:flex;flex-direction:column; }
+.pack-column h3 { font-size:12px;font-weight:400;margin:0;padding:10px;background:#777;color:#fff;text-shadow:1px 1px #333;border:2px solid #373737;border-bottom:0; }
+.pack-list { min-height:240px;max-height:43vh;overflow:auto;padding:7px;background:#171717;color:#ddd;border:2px solid #373737;scrollbar-width:thin; }
+.pack-card { display:grid;grid-template-columns:48px minmax(0,1fr);gap:10px;padding:10px 5px;border-bottom:1px solid #444; }
+.pack-card>img { width:48px;height:48px;image-rendering:pixelated;object-fit:contain; }
+.pack-card>div { min-width:0; }
+.pack-card strong { display:block;font-family:Minecraft,Galmuri;font-size:15px;font-weight:400;color:#fff;overflow-wrap:anywhere;line-height:1.4; }
+.pack-card p { margin:5px 0;font-size:9px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere; }
+.pack-card small { display:block;font-size:8px;line-height:1.7;color:#aaa; }
+.pack-card .pack-warning { color:#e0bd65;margin-top:5px; }
+.pack-card-actions { display:flex;gap:5px;flex-wrap:wrap;grid-column:1/-1; }
+.pack-small-button { border:1px solid #808080;background:#3d3d3d;color:#eee;font:inherit;font-size:9px;padding:5px 7px; }
+.pack-small-button:hover { background:#555; }
+.pack-small-button:disabled { opacity:.32; }
+.pack-empty { font-size:10px;line-height:1.9;text-align:center;color:#999;margin:42px 12px; }
+.pack-default { background:#292929;border:2px solid #373737;border-top:0;color:#ddd;padding:11px;display:flex;align-items:center;gap:10px;font-size:10px; }
+.pack-default img { width:28px;height:28px;image-rendering:pixelated; }
+.pack-default small { display:block;color:#aaa;font-size:8px;margin-top:5px; }
+.pack-toolbar { display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:16px 0 10px; }
+.pack-toolbar button { font-size:11px; }
+.pack-toolbar>span { color:#555;font-size:9px;line-height:1.8; }
+.pack-status { font-size:10px;line-height:1.8;color:#444;min-height:18px;margin:10px 0;overflow-wrap:anywhere; }
+.pack-applied { font-size:9px;line-height:1.8;color:#666;margin:8px 0; }
+.pack-pending { color:#685111;font-size:10px; }
+.pack-limit { font-size:9px;line-height:1.8;color:#666;margin:12px 0; }
+.pack-drag-over { outline:4px solid #80b951;outline-offset:-8px; }
+.pack-footer { display:flex;justify-content:flex-end;gap:12px;margin-top:18px;padding-top:14px;border-top:2px solid #999; }
+.pack-footer button { min-width:120px;font-size:12px; }
+@media(max-width:650px) { .pack-columns { grid-template-columns:1fr; }.pack-list { min-height:130px;max-height:26vh; }.pack-heading h2 { font-size:20px; }.resource-dialog.resource-packs-dialog { padding:13px; } }

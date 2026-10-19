@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "MINECRAFT? Chrome Transfer Helper",
+  "version": "1.0.0",
+  "description": "Transfer your Chrome cookies and bookmarks to your local MINECRAFT? browser when you choose.",
+  "permissions": ["cookies", "bookmarks"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_title": "Open Chrome Transfer Helper"}
+}
